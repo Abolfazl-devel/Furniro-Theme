@@ -30,73 +30,13 @@
 
     <div class="w-100">
 
-      <hedaer class="header mx-width">
+      <header class="header mx-width">
 
-        <label class="header__mobile-menu-img" for="mobile-menu">
+        <button class="header__mobile-menu-img" id="header__mobile-menu-img">
 
-          <img src="img/menu.png">
+          <img src="img/menu.svg">
 
-        </label>
-
-        <input type="checkbox" id="mobile-menu">
-
-        <div class="header__mobile-menu">
-
-          <label for="mobile-menu">
-
-            <img src="img/close3.png">
-
-          </label>
-
-          <a href="home.html">
-
-            <div>
-
-              <span> Home </span>
-
-            </div>
-
-          </a>
-
-          <a href="shop.html">
-
-            <div>
-
-              <span> Shop </span>
-
-            </div>
-
-          </a>
-
-          <div>
-
-            <span> About </span>
-
-          </div>
-
-          <a href="content.html">
-
-            <div>
-
-              <span> Contact </span>
-
-            </div>
-
-          </a>
-
-          <div>
-
-            <span> Profile </span>
-
-          </div>
-
-          <div>
-
-            <span> Favorite </span>
-
-          </div>
-
-        </div>
+        </button>
 
         <div class="header__logo">
 
@@ -110,29 +50,34 @@
 
         </div>
 
-        <div class="header__menu">
+        <nav class="header__menu" id="header__menu" style="left: -512px;">
 
-          <a href="home.html">
+          <div class="header__menu--close w-100" id="header__menu--close">
+            <img src="img/close3.svg">
+          </div>
 
-            <span> Home </span>
+          <ul class="w-100">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="shop.html">Shop</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="content.html">Contact</a>
+            </li>
+            <li>
+              <a href="#">Profile</a>
+            </li>
+            <li>
+              <a href="#">Favorite</a>
+            </li>
+          </ul>
 
-          </a>
-
-          <a href="shop.html">
-
-            <span> Shop </span>
-
-          </a>
-
-          <span> About </span>
-
-          <a href="content.html">
-
-            <span> Contact </span>
-
-          </a>
-
-        </div>
+        </nav>
 
         <div class="header__icon-menu">
 
@@ -282,11 +227,15 @@
 
         </div>
 
-      </hedaer>
+      </header>
 
     </div>
 
     <!-- end header -->
+
+    <!-- start backdrop -->
+    <div class="backdrop w-100" style="display: none;" id="backdrop"></div>
+    <!-- end backdrop -->
 
 
 
@@ -630,13 +579,13 @@
 
                   <div>
 
-                  <a href="product-compairson.html">
+                    <a href="product-compairson.html">
 
-                    <img src="img/compare.svg">
+                      <img src="img/compare.svg">
 
-                    <span> Compare </span>
+                      <span> Compare </span>
 
-                  </a>
+                    </a>
 
                   </div>
 
@@ -701,9 +650,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -775,9 +724,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -837,9 +786,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -911,9 +860,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -979,9 +928,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1053,9 +1002,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1115,9 +1064,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1186,13 +1135,13 @@
 
                   <div>
 
-                   <a href="product-compairson.html">
+                    <a href="product-compairson.html">
 
-                    <img src="img/compare.svg">
+                      <img src="img/compare.svg">
 
-                    <span> Compare </span>
+                      <span> Compare </span>
 
-                  </a>
+                    </a>
 
                   </div>
 
@@ -1257,9 +1206,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1331,9 +1280,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1393,9 +1342,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1467,9 +1416,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1535,9 +1484,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1639,9 +1588,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1701,9 +1650,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1775,9 +1724,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -1843,287 +1792,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
-                    </a>
 
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product1.png">
-
-            <div class="product__discount">
-
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5> Syltherine </h5>
-
-              <p> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                  <a href="product-compairson.html">
-
-                    <img src="img/compare.svg">
-
-                    <span> Compare </span>
-
-                  </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product2.png">
-
-            <div class="product__caption">
-
-              <h5> Leviosa </h5>
-
-              <p> Stylish cafe chair </p>
-
-              <h6> Rp 2.500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-compairson.html">
-
-                      <img src="img/compare.svg">
-  
-                      <span> Compare </span>
-  
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product3.png">
-
-            <div class="product__discount">
-
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5> Lolito </h5>
-
-              <p> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-compairson.html">
-
-                      <img src="img/compare.svg">
-  
-                      <span> Compare </span>
-  
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5> Respira </h5>
-
-              <p> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-compairson.html">
-
-                      <img src="img/compare.svg">
-  
-                      <span> Compare </span>
-  
                     </a>
 
                   </div>
@@ -2195,9 +1866,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -2257,9 +1928,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -2331,9 +2002,287 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
+                    </a>
+
+                  </div>
+
+                  <div>
+
+                    <img src="img/heart1.svg">
+
+                    <span> Like </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="products__product">
+
+            <img src="img/product4.png">
+
+            <div class="product__marker">
+
+              <p> New </p>
+
+            </div>
+
+            <div class="product__caption">
+
+              <h5> Respira </h5>
+
+              <p> Outdoor bar table and stool </p>
+
+              <h6> Rp 500.000 </h6>
+
+            </div>
+
+            <div class="product__hover">
+
+              <div class="product__hover-content">
+
+                <div class="product__hover-content--button">
+
+                  <button> Add to card </button>
+
+                </div>
+
+                <div class="product__hover--img">
+
+                  <div>
+
+                    <img src="img/share.svg">
+
+                    <span> Share </span>
+
+                  </div>
+
+                  <div>
+
+                    <a href="product-compairson.html">
+
+                      <img src="img/compare.svg">
+
+                      <span> Compare </span>
+
+                    </a>
+
+                  </div>
+
+                  <div>
+
+                    <img src="img/heart1.svg">
+
+                    <span> Like </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="products__product">
+
+            <img src="img/product1.png">
+
+            <div class="product__discount">
+
+              <p> -30% </p>
+
+            </div>
+
+            <div class="product__caption">
+
+              <h5> Syltherine </h5>
+
+              <p> Stylish cafe chair </p>
+
+              <div class="product__price">
+
+                <h6> Rp 2.500.000 </h6>
+
+                <del> Rp 3.500.000 </del>
+
+              </div>
+
+            </div>
+
+            <div class="product__hover">
+
+              <div class="product__hover-content">
+
+                <div class="product__hover-content--button">
+
+                  <button> Add to card </button>
+
+                </div>
+
+                <div class="product__hover--img">
+
+                  <div>
+
+                    <img src="img/share.svg">
+
+                    <span> Share </span>
+
+                  </div>
+
+                  <div>
+
+                    <a href="product-compairson.html">
+
+                      <img src="img/compare.svg">
+
+                      <span> Compare </span>
+
+                    </a>
+
+                  </div>
+
+                  <div>
+
+                    <img src="img/heart1.svg">
+
+                    <span> Like </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="products__product">
+
+            <img src="img/product2.png">
+
+            <div class="product__caption">
+
+              <h5> Leviosa </h5>
+
+              <p> Stylish cafe chair </p>
+
+              <h6> Rp 2.500.000 </h6>
+
+            </div>
+
+            <div class="product__hover">
+
+              <div class="product__hover-content">
+
+                <div class="product__hover-content--button">
+
+                  <button> Add to card </button>
+
+                </div>
+
+                <div class="product__hover--img">
+
+                  <div>
+
+                    <img src="img/share.svg">
+
+                    <span> Share </span>
+
+                  </div>
+
+                  <div>
+
+                    <a href="product-compairson.html">
+
+                      <img src="img/compare.svg">
+
+                      <span> Compare </span>
+
+                    </a>
+
+                  </div>
+
+                  <div>
+
+                    <img src="img/heart1.svg">
+
+                    <span> Like </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="products__product">
+
+            <img src="img/product3.png">
+
+            <div class="product__discount">
+
+              <p> -50% </p>
+
+            </div>
+
+            <div class="product__caption">
+
+              <h5> Lolito </h5>
+
+              <p> Luxury big sofa </p>
+
+              <div class="product__price">
+
+                <h6> Rp 7.000.000 </h6>
+
+                <del> Rp 14.000.000 </del>
+
+              </div>
+
+            </div>
+
+            <div class="product__hover">
+
+              <div class="product__hover-content">
+
+                <div class="product__hover-content--button">
+
+                  <button> Add to card </button>
+
+                </div>
+
+                <div class="product__hover--img">
+
+                  <div>
+
+                    <img src="img/share.svg">
+
+                    <span> Share </span>
+
+                  </div>
+
+                  <div>
+
+                    <a href="product-compairson.html">
+
+                      <img src="img/compare.svg">
+
+                      <span> Compare </span>
+
                     </a>
 
                   </div>
@@ -2398,9 +2347,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
                     </a>
 
@@ -2473,9 +2422,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -2535,9 +2484,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -2609,9 +2558,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>
@@ -2677,9 +2626,9 @@
                     <a href="product-compairson.html">
 
                       <img src="img/compare.svg">
-  
+
                       <span> Compare </span>
-  
+
                     </a>
 
                   </div>

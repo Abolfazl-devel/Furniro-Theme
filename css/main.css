@@ -551,11 +551,6 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
         width: 80%;
     }
 
-    .header__menu>ul>li:nth-child(5),
-    .header__menu>ul>li:last-child {
-        display: block;
-    }
-
     .header__menu ul {
         flex-direction: column;
         align-items: normal;
@@ -761,6 +756,10 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
     }
 
 
+    .header__menu>ul>li:nth-child(5),
+    .header__menu>ul>li:last-child {
+        display: block;
+    }
 
 }
 

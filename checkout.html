@@ -30,71 +30,11 @@
 
       <header class="header mx-width">
 
-        <label class="header__mobile-menu-img" for="mobile-menu">
+        <button class="header__mobile-menu-img" id="header__mobile-menu-img">
 
-          <img src="img/menu.png">
+          <img src="img/menu.svg">
 
-        </label>
-
-        <input type="checkbox" id="mobile-menu">
-
-        <div class="header__mobile-menu">
-
-          <label for="mobile-menu">
-
-            <img src="img/close3.png">
-
-          </label>
-
-          <a href="home.html">
-
-            <div>
-
-              <span> Home </span>
-
-            </div>
-
-          </a>
-
-          <a href="shop.html">
-
-            <div>
-
-              <span> Shop </span>
-
-            </div>
-
-          </a>
-
-          <div>
-
-            <span> About </span>
-
-          </div>
-
-          <a href="content.html">
-
-            <div>
-
-              <span> Contact </span>
-
-            </div>
-
-          </a>
-
-          <div>
-
-            <span> Profile </span>
-
-          </div>
-
-          <div>
-
-            <span> Favorite </span>
-
-          </div>
-
-        </div>
+        </button>
 
         <div class="header__logo">
 
@@ -108,29 +48,34 @@
 
         </div>
 
-        <div class="header__menu">
+        <nav class="header__menu" id="header__menu" style="left: -512px;">
 
-          <a href="home.html">
+          <div class="header__menu--close w-100" id="header__menu--close">
+            <img src="img/close3.svg">
+          </div>
 
-            <span> Home </span>
+          <ul class="w-100">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="shop.html">Shop</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="content.html">Contact</a>
+            </li>
+            <li>
+              <a href="#">Profile</a>
+            </li>
+            <li>
+              <a href="#">Favorite</a>
+            </li>
+          </ul>
 
-          </a>
-
-          <a href="shop.html">
-
-            <span> Shop </span>
-
-          </a>
-
-          <span> About </span>
-
-          <a href="content.html">
-
-            <span> Contact </span>
-
-          </a>
-
-        </div>
+        </nav>
 
         <div class="header__icon-menu">
 
@@ -285,6 +230,10 @@
     </div>
 
     <!-- end header -->
+
+    <!-- start backdrop -->
+    <div class="backdrop w-100" style="display: none;" id="backdrop"></div>
+    <!-- end backdrop -->
 
 
 
