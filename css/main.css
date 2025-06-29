@@ -631,6 +631,14 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
 
 
 /* start header responsive */
+@media only screen and (max-width:930px) {
+    .header__icon-menu--profile {
+        width: 238px;
+    }
+    .icon-menu--profile__info > div > p:last-child {
+        max-width: 140px;
+    }
+}
 
 @media only screen and (max-width:630px) {
 
