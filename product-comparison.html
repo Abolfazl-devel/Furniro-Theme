@@ -42,100 +42,148 @@
 
     <div class="w-100">
 
-      <header class="header mx-width">
+      <div class="w-100 headerParent" id="headerParent" style="background-color: #fff;">
 
-        <button class="header__mobile-menu-img" id="header__mobile-menu-img">
+        <header class="header mx-width">
 
-          <img src="img/menu.svg">
+          <button class="header__mobile-menu-img" id="header__mobile-menu-img">
 
-        </button>
+            <img src="img/menu.svg">
 
-        <div class="header__logo">
+          </button>
 
-          <a href="home.html">
+          <div class="header__logo">
 
-            <img src="img/logo.svg">
+            <a href="home.html">
 
-            <h1> Furniro </h1>
+              <img src="img/logo.svg">
 
-          </a>
+              <h1> Furniro </h1>
 
-        </div>
+            </a>
 
-        <nav class="header__menu" id="header__menu" style="left: -512px;">
-
-          <div class="header__menu--close w-100" id="header__menu--close">
-            <img src="img/close3.svg">
           </div>
 
-          <ul class="w-100">
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="shop.html">Shop</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="content.html">Contact</a>
-            </li>
-            <li>
-              <a href="#">Profile</a>
-            </li>
-            <li>
-              <a href="#">Favorite</a>
-            </li>
-          </ul>
+          <nav class="header__menu" id="header__menu" style="left: -512px; z-index: 2;">
 
-        </nav>
+            <div class="header__menu--close w-100">
+              <img src="img/close3.svg" id="header__menu--close">
+            </div>
 
-        <div class="header__icon-menu">
+            <ul class="w-100">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="shop.html">Shop</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="content.html">Contact</a>
+              </li>
+              <li>
+                <a href="#">Profile</a>
+              </li>
+              <li>
+                <a href="#">Favorite</a>
+              </li>
+            </ul>
 
-          <a href="#">
+          </nav>
 
-            <img src="img/user.svg">
+          <div class="header__icon-menu">
 
-          </a>
+            <div id="profileButton">
 
-          <img src="img/search.svg">
+              <img src="img/user.svg">
 
-          <a href="#">
 
-            <img src="img/heart.svg">
+              <div class="header__icon-menu--profile" style="display: none;" id="profile">
+                <div class="icon-menu--profile__info">
+                  <img src="img/user2.svg" alt="Your image">
+                  <div>
+                    <p> Ameli Syuzi </p>
+                    <p>depese7006@exitbit.com</p>
+                  </div>
+                </div>
+                <div class="icon-menu--profile__buttons">
+                  <button>Setting</button>
+                  <button>Orders</button>
+                  <button>Log out</button>
+                </div>
+              </div>
+            </div>
 
-          </a>
 
-          <label for="shop-menu">
+            <div>
+              <img src="img/search.svg">
+            </div>
 
-            <img src="img/shop.svg">
+            <div id="favorite">
 
-          </label>
-
-          <input type="checkbox" id="shop-menu">
-
-          <div class="header__shop-menu">
-
-            <div class="header__shop-menu--title">
-
-              <h6> Shopping Cart </h6>
-
-              <label for="shop-menu">
-
-                <img src="img/Close.svg">
-
-              </label>
+              <img src="img/heart.svg">
 
             </div>
 
-            <div class="header__shop-menu--products">
+            <label for="shop-menu" style="z-index: 0;">
 
-              <div>
+              <img src="img/shop.svg">
+
+            </label>
+
+            <input type="checkbox" id="shop-menu">
+
+            <div class="header__shop-menu">
+
+              <div class="header__shop-menu--title">
+
+                <h6> Shopping Cart </h6>
+
+                <label for="shop-menu">
+
+                  <img src="img/Close.svg">
+
+                </label>
+
+              </div>
+
+              <div class="header__shop-menu--products">
 
                 <div>
 
-                  <img src="img/sofa5-small.png">
+                  <div>
+
+                    <img src="img/sofa5-small.png">
+
+                  </div>
+
+                  <div>
+
+                    <div>
+
+                      <p> Asgaard sofa </p>
+
+                    </div>
+
+                    <div>
+
+                      <p> 1 </p>
+
+                      <p> x </p>
+
+                      <span> Rs.250,000.00 </span>
+
+                    </div>
+
+                  </div>
+
+                  <div>
+
+                    <img src="img/Close2.svg">
+
+                  </div>
 
                 </div>
 
@@ -143,104 +191,77 @@
 
                   <div>
 
-                    <p> Asgaard sofa </p>
+                    <img src="img/sofa8.png">
 
                   </div>
 
                   <div>
 
-                    <p> 1 </p>
+                    <div>
 
-                    <p> x </p>
+                      <p> Casaliving Wood </p>
 
-                    <span> Rs.250,000.00 </span>
+                    </div>
+
+                    <div>
+
+                      <p> 1 </p>
+
+                      <p> x </p>
+
+                      <span> Rs. 270,000.00 </span>
+
+                    </div>
 
                   </div>
 
-                </div>
+                  <div>
 
-                <div>
+                    <img src="img/Close2.svg">
 
-                  <img src="img/Close2.svg">
+                  </div>
 
                 </div>
 
               </div>
 
-              <div>
+              <div class="header__shop-menu--total">
 
-                <div>
+                <p> Subtotal </p>
 
-                  <img src="img/sofa8.png">
+                <span> Rs.520,000.00 </span>
 
-                </div>
+              </div>
 
-                <div>
+              <div class="header__shop-menu--button">
 
-                  <div>
+                <a href="cart.html">
 
-                    <p> Casaliving Wood </p>
+                  <button> Cart </button>
 
-                  </div>
+                </a>
 
-                  <div>
+                <a href=".checkout.html">
 
-                    <p> 1 </p>
+                  <button> Checkout </button>
 
-                    <p> x </p>
+                </a>
 
-                    <span> Rs. 270,000.00 </span>
+                <a href="product-compairson.html">
 
-                  </div>
+                  <button> Comparison </button>
 
-                </div>
-
-                <div>
-
-                  <img src="img/Close2.svg">
-
-                </div>
+                </a>
 
               </div>
 
             </div>
 
-            <div class="header__shop-menu--total">
-
-              <p> Subtotal </p>
-
-              <span> Rs.520,000.00 </span>
-
-            </div>
-
-            <div class="header__shop-menu--button">
-
-              <a href="cart.html">
-
-                <button> Cart </button>
-
-              </a>
-
-              <a href=".checkout.html">
-
-                <button> Checkout </button>
-
-              </a>
-
-              <a href="product-compairson.html">
-
-                <button> Comparison </button>
-
-              </a>
-
-            </div>
-
           </div>
 
-        </div>
+        </header>
 
-      </header>
-
+      </div>
     </div>
 
     <!-- end header -->
