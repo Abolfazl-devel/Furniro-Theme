@@ -105,7 +105,7 @@
             </div>
 
 
-            <div>
+            <div id="searchPopupButton">
               <img src="img/search.svg">
             </div>
 
@@ -254,6 +254,97 @@
 
     <!-- end header -->
 
+    <!-- search box -->
+    <div class="search-box" id="search-box" style="top: -658px;">
+      <div class="w-100">
+        <button id="search-box__close">
+          <img src="img/close3.svg" alt="">
+        </button>
+        <span style="font-weight: 600;">Search Product</span>
+      </div>
+      <div class="w-100" style="border: none;">
+                <input type="search" placeholder="Product name / Product type:example Night lamp" id="searchInput" autocomplete="search">
+        <button id="search">
+          <img src="img/search.svg" alt="">
+        </button>
+      </div>
+      <div class="search-box__results">
+        <a href="single-product.html">
+          <img src="img/product1.png" alt="">
+          <div>
+            <p>Syltherine</p>
+            <p>Stylish cafe chair</p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <img src="img/product2.png" alt="">
+          <div>
+            <p>Leviosa</p>
+            <p> Stylish cafe chair </p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <img src="img/product3.png" alt="">
+          <div>
+            <p>Lolito</p>
+            <p>Luxury big sofa</p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <img src="img/product4.png" alt="">
+          <div>
+            <p>Respira</p>
+            <p>Outdoor bar table and stool</p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <img src="img/product5.png" alt="">
+          <div>
+            <p>Grifo</p>
+            <p>Night lamp</p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <img src="img/product6.png" alt="">
+          <div>
+            <p>Muggo</p>
+            <p>Small Mug</p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <img src="img/product7.png" alt="">
+          <div>
+            <p>Pingky</p>
+            <p>Cute bed set</p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <img src="img/product8.png" alt="">
+          <div>
+            <p>Potty</p>
+            <p>Minimalist flower pot</p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <img src="img/sofa8.png" alt="">
+          <div>
+            <p>Asgaard sofa</p>
+            <p></p>
+          </div>
+        </a>
+        <a href="single-product.html">
+          <div class="search-box__results--img">
+            <img src="img/sofa5-small.png" alt="">
+          </div>
+          <div>
+            <p>Casaliving Wood</p>
+            <p></p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- search box -->
+
     <!-- start backdrop -->
     <div class="backdrop w-100" style="display: none;" id="backdrop"></div>
     <!-- end backdrop -->
@@ -270,7 +361,7 @@
 
           <a href="shop.html">
 
-            <h4> Shop </h4>
+            <h4 id="pageTitle"> Shop </h4>
 
           </a>
 
@@ -288,7 +379,7 @@
 
           <a href="shop.html">
 
-            <span> Shop </span>
+            <span id="pagePath"> Shop </span>
 
           </a>
 
@@ -428,9 +519,9 @@
 
             <div class="product__caption">
 
-              <h5> Syltherine </h5>
+              <h5 class="product__caption--name"> Syltherine </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <div class="product__price">
 
@@ -496,9 +587,9 @@
 
             <div class="product__caption">
 
-              <h5> Leviosa </h5>
+              <h5 class="product__caption--name"> Leviosa </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <h6> Rp 2.500.000 </h6>
 
@@ -564,9 +655,9 @@
 
             <div class="product__caption">
 
-              <h5> Lolito </h5>
+              <h5 class="product__caption--name"> Lolito </h5>
 
-              <p> Luxury big sofa </p>
+              <p class="product__caption--name"> Luxury big sofa </p>
 
               <div class="product__price">
 
@@ -638,9 +729,9 @@
 
             <div class="product__caption">
 
-              <h5> Respira </h5>
+              <h5 class="product__caption--name"> Respira </h5>
 
-              <p> Outdoor bar table and stool </p>
+              <p class="product__caption--name"> Outdoor bar table and stool </p>
 
               <h6> Rp 500.000 </h6>
 
@@ -706,9 +797,9 @@
 
             <div class="product__caption">
 
-              <h5> Syltherine </h5>
+              <h5 class="product__caption--name"> Syltherine </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <div class="product__price">
 
@@ -774,9 +865,9 @@
 
             <div class="product__caption">
 
-              <h5> Leviosa </h5>
+              <h5 class="product__caption--name"> Leviosa </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <h6> Rp 2.500.000 </h6>
 
@@ -842,9 +933,9 @@
 
             <div class="product__caption">
 
-              <h5> Lolito </h5>
+              <h5 class="product__caption--name"> Lolito </h5>
 
-              <p> Luxury big sofa </p>
+              <p class="product__caption--name"> Luxury big sofa </p>
 
               <div class="product__price">
 
@@ -916,9 +1007,9 @@
 
             <div class="product__caption">
 
-              <h5> Respira </h5>
+              <h5 class="product__caption--name"> Respira </h5>
 
-              <p> Outdoor bar table and stool </p>
+              <p class="product__caption--name"> Outdoor bar table and stool </p>
 
               <h6> Rp 500.000 </h6>
 
@@ -984,9 +1075,9 @@
 
             <div class="product__caption">
 
-              <h5> Syltherine </h5>
+              <h5 class="product__caption--name"> Syltherine </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <div class="product__price">
 
@@ -1052,9 +1143,9 @@
 
             <div class="product__caption">
 
-              <h5> Leviosa </h5>
+              <h5 class="product__caption--name"> Leviosa </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <h6> Rp 2.500.000 </h6>
 
@@ -1120,9 +1211,9 @@
 
             <div class="product__caption">
 
-              <h5> Lolito </h5>
+              <h5 class="product__caption--name"> Lolito </h5>
 
-              <p> Luxury big sofa </p>
+              <p class="product__caption--name"> Luxury big sofa </p>
 
               <div class="product__price">
 
@@ -1194,9 +1285,9 @@
 
             <div class="product__caption">
 
-              <h5> Respira </h5>
+              <h5 class="product__caption--name"> Respira </h5>
 
-              <p> Outdoor bar table and stool </p>
+              <p class="product__caption--name"> Outdoor bar table and stool </p>
 
               <h6> Rp 500.000 </h6>
 
@@ -1262,9 +1353,9 @@
 
             <div class="product__caption">
 
-              <h5> Syltherine </h5>
+              <h5 class="product__caption--name"> Syltherine </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <div class="product__price">
 
@@ -1330,9 +1421,9 @@
 
             <div class="product__caption">
 
-              <h5> Leviosa </h5>
+              <h5 class="product__caption--name"> Leviosa </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <h6> Rp 2.500.000 </h6>
 
@@ -1398,9 +1489,9 @@
 
             <div class="product__caption">
 
-              <h5> Lolito </h5>
+              <h5 class="product__caption--name"> Lolito </h5>
 
-              <p> Luxury big sofa </p>
+              <p class="product__caption--name"> Luxury big sofa </p>
 
               <div class="product__price">
 
@@ -1472,9 +1563,9 @@
 
             <div class="product__caption">
 
-              <h5> Respira </h5>
+              <h5 class="product__caption--name"> Respira </h5>
 
-              <p> Outdoor bar table and stool </p>
+              <p class="product__caption--name"> Outdoor bar table and stool </p>
 
               <h6> Rp 500.000 </h6>
 
@@ -1570,9 +1661,9 @@
 
             <div class="product__caption">
 
-              <h5> Syltherine </h5>
+              <h5 class="product__caption--name"> Syltherine </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <div class="product__price">
 
@@ -1638,9 +1729,9 @@
 
             <div class="product__caption">
 
-              <h5> Leviosa </h5>
+              <h5 class="product__caption--name"> Leviosa </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <h6> Rp 2.500.000 </h6>
 
@@ -1706,9 +1797,9 @@
 
             <div class="product__caption">
 
-              <h5> Lolito </h5>
+              <h5 class="product__caption--name"> Lolito </h5>
 
-              <p> Luxury big sofa </p>
+              <p class="product__caption--name"> Luxury big sofa </p>
 
               <div class="product__price">
 
@@ -1780,9 +1871,9 @@
 
             <div class="product__caption">
 
-              <h5> Respira </h5>
+              <h5 class="product__caption--name"> Respira </h5>
 
-              <p> Outdoor bar table and stool </p>
+              <p class="product__caption--name"> Outdoor bar table and stool </p>
 
               <h6> Rp 500.000 </h6>
 
@@ -1848,9 +1939,9 @@
 
             <div class="product__caption">
 
-              <h5> Syltherine </h5>
+              <h5 class="product__caption--name"> Syltherine </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <div class="product__price">
 
@@ -1916,9 +2007,9 @@
 
             <div class="product__caption">
 
-              <h5> Leviosa </h5>
+              <h5 class="product__caption--name"> Leviosa </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <h6> Rp 2.500.000 </h6>
 
@@ -1984,9 +2075,9 @@
 
             <div class="product__caption">
 
-              <h5> Lolito </h5>
+              <h5 class="product__caption--name"> Lolito </h5>
 
-              <p> Luxury big sofa </p>
+              <p class="product__caption--name"> Luxury big sofa </p>
 
               <div class="product__price">
 
@@ -2058,9 +2149,9 @@
 
             <div class="product__caption">
 
-              <h5> Respira </h5>
+              <h5 class="product__caption--name"> Respira </h5>
 
-              <p> Outdoor bar table and stool </p>
+              <p class="product__caption--name"> Outdoor bar table and stool </p>
 
               <h6> Rp 500.000 </h6>
 
@@ -2126,9 +2217,9 @@
 
             <div class="product__caption">
 
-              <h5> Syltherine </h5>
+              <h5 class="product__caption--name"> Syltherine </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <div class="product__price">
 
@@ -2194,9 +2285,9 @@
 
             <div class="product__caption">
 
-              <h5> Leviosa </h5>
+              <h5 class="product__caption--name"> Leviosa </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <h6> Rp 2.500.000 </h6>
 
@@ -2262,9 +2353,9 @@
 
             <div class="product__caption">
 
-              <h5> Lolito </h5>
+              <h5 class="product__caption--name"> Lolito </h5>
 
-              <p> Luxury big sofa </p>
+              <p class="product__caption--name"> Luxury big sofa </p>
 
               <div class="product__price">
 
@@ -2336,9 +2427,9 @@
 
             <div class="product__caption">
 
-              <h5> Respira </h5>
+              <h5 class="product__caption--name"> Respira </h5>
 
-              <p> Outdoor bar table and stool </p>
+              <p class="product__caption--name"> Outdoor bar table and stool </p>
 
               <h6> Rp 500.000 </h6>
 
@@ -2404,9 +2495,9 @@
 
             <div class="product__caption">
 
-              <h5> Syltherine </h5>
+              <h5 class="product__caption--name"> Syltherine </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <div class="product__price">
 
@@ -2472,9 +2563,9 @@
 
             <div class="product__caption">
 
-              <h5> Leviosa </h5>
+              <h5 class="product__caption--name"> Leviosa </h5>
 
-              <p> Stylish cafe chair </p>
+              <p class="product__caption--name"> Stylish cafe chair </p>
 
               <h6> Rp 2.500.000 </h6>
 
@@ -2540,9 +2631,9 @@
 
             <div class="product__caption">
 
-              <h5> Lolito </h5>
+              <h5 class="product__caption--name"> Lolito </h5>
 
-              <p> Luxury big sofa </p>
+              <p class="product__caption--name"> Luxury big sofa </p>
 
               <div class="product__price">
 
@@ -2614,9 +2705,9 @@
 
             <div class="product__caption">
 
-              <h5> Respira </h5>
+              <h5 class="product__caption--name"> Respira </h5>
 
-              <p> Outdoor bar table and stool </p>
+              <p class="product__caption--name"> Outdoor bar table and stool </p>
 
               <h6> Rp 500.000 </h6>
 
@@ -2879,8 +2970,9 @@
 
 
   </div>
-  <script src="js/header.js"></script>
+  <script src="js/header.js" type="module"></script>
   <script src="js/script.js"></script>
+  <script src="js/shop.js" type="module"></script>
 </body>
 
 
