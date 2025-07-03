@@ -113,7 +113,7 @@ searchBox.onsubmit = function (e) {
   };
 };
 if (window.location.href.search('shop.html') == -1) {
-  sessionStorage.clear();  
+  sessionStorage.clear();
 };
 
 // close popups and menues when click on the places in page
