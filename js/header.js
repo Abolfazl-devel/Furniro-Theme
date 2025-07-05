@@ -22,6 +22,7 @@ function closePopup() {
   profile.style.display = 'none';
   searchBox.style.top = '-658px';
   document.body.style.removeProperty('overflow');
+  wishlist.style.display = 'none';
 };
 
 moblieMenuBut.onclick = function (e) {
@@ -115,6 +116,35 @@ searchBox.onsubmit = function (e) {
 if (window.location.href.search('shop.html') == -1) {
   sessionStorage.clear();
 };
+//search box
+
+//Wish list
+var WishListButton = document.getElementById('wishlist');
+var wishlist = document.getElementById('header__icon-menu--wishlist');
+WishListButton.onclick = function (e) {
+  e.stopPropagation();
+  if (wishlist.style.display == 'none') {
+    wishlist.style.display = 'block';
+    backdrop.style.display = 'block';
+    headerParent.style.zIndex = '3';
+  } else {
+    closePopup();
+  };
+};
+
+var deleteWishlistItemBut = document.querySelectorAll('.header__icon-menu--wishlist>div>div>img:first-child');
+deleteWishlistItemBut.forEach(function (but) {
+  but.onclick = function () {
+    but.parentElement.style.transform = 'translateX(-397px)';
+    setTimeout(() => {
+      but.parentElement.style.display = 'none';
+    }, 400);
+  };
+});
+
+wishlist.onclick = function (e) {
+  e.stopPropagation();
+}
 
 // close popups and menues when click on the places in page
 window.addEventListener('click', function () {
