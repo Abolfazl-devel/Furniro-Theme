@@ -49,6 +49,7 @@ var profileBut = document.getElementById('profileButton');
 var profile = document.getElementById('profile');
 profileBut.onclick = function (e) {
   e.stopPropagation();
+  closePopup();
   if (profile.style.display == 'none') {
     profile.style.display = 'block';
     backdrop.style.display = 'block';
@@ -129,6 +130,7 @@ var WishListButton = document.getElementById('wishlist');
 var wishlist = document.getElementById('header__icon-menu--wishlist');
 WishListButton.onclick = function (e) {
   e.stopPropagation();
+  closePopup();
   if (wishlist.style.display == 'none') {
     wishlist.style.display = 'block';
     backdrop.style.display = 'block';
