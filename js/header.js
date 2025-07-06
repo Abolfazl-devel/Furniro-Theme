@@ -146,6 +146,11 @@ wishlist.onclick = function (e) {
   e.stopPropagation();
 }
 
+var closeWishlist = document.getElementById('icon-menu--wishlist__close');
+closeWishlist.onclick = function () {
+  closePopup();
+}
+
 // close popups and menues when click on the places in page
 window.addEventListener('click', function () {
   closePopup();
