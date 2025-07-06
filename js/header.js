@@ -64,6 +64,12 @@ profileBut.onclick = function (e) {
 profile.onclick = function (e) {
   e.stopPropagation();
 }
+
+var closeProfile = document.getElementById('icon-menu--profile__close');
+
+closeProfile.onclick = function () {
+  closePopup();
+}
 // profile pop up
 
 // search box

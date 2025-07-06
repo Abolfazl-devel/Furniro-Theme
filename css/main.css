@@ -248,14 +248,27 @@
 
 .header__icon-menu--profile {
     position: absolute;
-    top: 38px;
-    left: -102px;
+    top: 74px;
+    left: -250px;
     background-color: #fff;
     padding: 20px;
     border: 1px solid #b98e2f;
     cursor: auto;
     box-sizing: border-box;
+    border-radius: 8px;
     animation: displayAnimation ease 0.3s;
+}
+.icon-menu--profile__close {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+.icon-menu--profile__close img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(46%) sepia(0%) saturate(1%) hue-rotate(147deg) brightness(96%) contrast(88%);
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .icon-menu--profile__info {
@@ -431,7 +444,7 @@
     width: 25px;
     height: 25px;
     cursor: pointer;
-    
+
 }
 
 .header__icon-menu--wishlist>div>div {
@@ -793,20 +806,6 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
     transition: all linear 0.3s;
 }
 
-.header__icon-menu--profile::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 97px;
-    background-color: #d4d4d4;
-    transition: all linear 0.3s;
-    width: 33px;
-    height: 10px;
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
-    z-index: 2;
-    transform: rotate(180deg);
-}
-
 /* end  header after and before */
 
 /* start header focus */
@@ -822,16 +821,6 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
 
 
 /* start header responsive */
-@media only screen and (max-width:930px) {
-    .header__icon-menu--profile {
-        width: 238px;
-    }
-
-    .icon-menu--profile__info>div>p:last-child {
-        max-width: 140px;
-    }
-}
-
 @media only screen and (max-width:630px) {
 
     .header__mobile-menu-img {
@@ -892,6 +881,17 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
     }
 
     /* end responsive mode hover */
+}
+
+@media only screen and (max-width:555px) {
+    #profileButton {
+        position: unset;
+    }
+    .header__icon-menu--profile {
+        left: 0;
+        width: 100%;
+        top: 115px;
+    }
 }
 
 @media only screen and (max-width:530px) {
