@@ -80,19 +80,14 @@ searchPopupBut.onclick = function (e) {
   e.stopPropagation();
   closePopup();
   menu.style.zIndex = '2';
-  headerParent.style.zIndex = '2';
-  searchBox.style.top = '25px';
+  headerParent.style.zIndex = '3';
+  searchBox.style.top = '117px';
   backdrop.style.display = 'block';
   document.body.style.overflow = 'hidden';
 };
 
 searchBox.onclick = function (e) {
   e.stopPropagation();
-};
-
-var closeSearchBut = document.getElementById('search-box__close');
-closeSearchBut.onclick = function () {
-  closePopup();
 };
 
 var searchInput = document.getElementById('searchInput');
