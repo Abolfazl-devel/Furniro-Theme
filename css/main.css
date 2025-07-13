@@ -441,13 +441,15 @@
 .header__icon-menu--wishlist>div:first-child {
     font-weight: 600;
     margin-bottom: 35px;
+    position: relative;
 }
 
 .header__icon-menu--wishlist>div:first-child>img {
     width: 25px;
     height: 25px;
     cursor: pointer;
-
+    position: absolute;
+    right: 0;
 }
 
 .header__icon-menu--wishlist>div>div {
@@ -7071,7 +7073,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.total__price--product>div:first-child >span:first-child {
+.total__price--product>div:first-child>span:first-child {
 
     color: #9F9F9F;
 
