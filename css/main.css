@@ -846,7 +846,7 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
 
     .header__menu {
         position: absolute;
-        top: 0;
+        top: 117px;
         height: 100%;
         min-width: 0;
         flex-direction: column;
