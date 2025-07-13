@@ -258,11 +258,13 @@
     border-radius: 8px;
     animation: displayAnimation ease 0.3s;
 }
+
 .icon-menu--profile__close {
     display: flex;
     justify-content: end;
     width: 100%;
 }
+
 .icon-menu--profile__close img {
     width: 20px;
     height: 20px;
@@ -513,21 +515,11 @@
 
 
 
-.header__icon-menu label>img {
+.header__shop-menu--title>img {
 
     cursor: pointer;
 
 }
-
-
-
-.header__icon-menu input[type=checkbox] {
-
-    display: none;
-
-}
-
-
 
 .header__shop-menu {
 
@@ -535,9 +527,7 @@
 
     position: absolute;
 
-    top: 0;
-
-    right: -450px;
+    top: 117px;
 
     background-color: #fff !important;
 
@@ -553,7 +543,8 @@
 
     position: absolute !important;
 
-    z-index: 2 !important;
+    z-index: 3 !important;
+    cursor: auto !important;
 
 }
 
@@ -596,6 +587,7 @@
     align-items: center;
 
     margin-bottom: 20px;
+    transition: all ease 0.3s;
 
 }
 
@@ -699,6 +691,28 @@
 
 }
 
+.header__shop-menu--empty {
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__shop-menu--empty img {
+    width: 200px;
+    height: 200px;
+}
+
+.header__shop-menu--empty p {
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.header__shop-menu--empty a {
+    margin-top: 25px;
+    color: #B98E2F;
+    display: block;
+    text-align: center;
+}
 
 
 .header__shop-menu--total span {
@@ -888,6 +902,7 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
     #profileButton {
         position: unset;
     }
+
     .header__icon-menu--profile {
         left: 0;
         width: 100%;
@@ -1731,6 +1746,8 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
     display: none;
 
     flex-wrap: wrap;
+
+    margin-top: 45px;
 
 }
 
@@ -7054,7 +7071,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.total__price>div:nth-child(2) div:first-child span:first-child {
+.total__price--product>div:first-child >span:first-child {
 
     color: #9F9F9F;
 

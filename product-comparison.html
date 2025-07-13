@@ -38,7 +38,7 @@
 
 
 
-     <!-- start header -->
+    <!-- start header -->
 
     <div class="w-100">
 
@@ -196,35 +196,33 @@
 
             </div>
 
-            <label for="shop-menu" style="z-index: 0;">
+            <div id="shopCardButton">
 
               <img src="img/shop.svg">
 
-            </label>
+            </div>
 
-            <input type="checkbox" id="shop-menu">
-
-            <div class="header__shop-menu">
+            <div class="header__shop-menu" id="header__shop-menu" style="right: -450px;">
 
               <div class="header__shop-menu--title">
 
                 <h6> Shopping Cart </h6>
 
-                <label for="shop-menu">
+                <div id="shop-menu--title__close" style="cursor: pointer;">
 
                   <img src="img/Close.svg">
 
-                </label>
+                </div>
 
               </div>
 
-              <div class="header__shop-menu--products">
+              <div class="header__shop-menu--products" id="header__shop-menu--products">
 
                 <div>
 
                   <div>
 
-                    <img src="img/sofa5-small.png">
+                    <img src="img/sofa5-small.png" class="shop-menu--products__img">
 
                   </div>
 
@@ -232,23 +230,23 @@
 
                     <div>
 
-                      <p> Asgaard sofa </p>
+                      <p class="shop-menu--products__name"> Asgaard sofa </p>
 
                     </div>
 
                     <div>
 
-                      <p> 1 </p>
+                      <p class="shop-menu--products__number"> 1 </p>
 
                       <p> x </p>
 
-                      <span> Rs.250,000.00 </span>
+                      <span class="shop-menu--products__price"> Rs.250,000.00 </span>
 
                     </div>
 
                   </div>
 
-                  <div>
+                  <div class="shop-menu--products__close">
 
                     <img src="img/Close2.svg">
 
@@ -260,7 +258,7 @@
 
                   <div>
 
-                    <img src="img/sofa8.png">
+                    <img src="img/sofa8.png" class="shop-menu--products__img">
 
                   </div>
 
@@ -268,23 +266,23 @@
 
                     <div>
 
-                      <p> Casaliving Wood </p>
+                      <p class="shop-menu--products__name"> Casaliving Wood </p>
 
                     </div>
 
                     <div>
 
-                      <p> 1 </p>
+                      <p class="shop-menu--products__number"> 1 </p>
 
                       <p> x </p>
 
-                      <span> Rs. 270,000.00 </span>
+                      <span class="shop-menu--products__price"> Rs. 270,000.00 </span>
 
                     </div>
 
                   </div>
 
-                  <div>
+                  <div class="shop-menu--products__close">
 
                     <img src="img/Close2.svg">
 
@@ -294,29 +292,27 @@
 
               </div>
 
-              <div class="header__shop-menu--total">
+              <div class="header__shop-menu--total" id="header__shop-menu--total">
 
                 <p> Subtotal </p>
 
-                <span> Rs.520,000.00 </span>
+                <span id="total"> Rs.520,000.00 </span>
 
+              </div>
+
+              <div class="header__shop-menu--empty" id="header__shop-menu--empty" style="display: none;">
+                <img src="img/shop.svg" alt="">
+                <p>Your cart is empty! </p>
+                <a href="shop.html">Click here to see products</a>
               </div>
 
               <div class="header__shop-menu--button">
 
-                <a href="cart.html">
+                <button id="cart"> Cart </button>
 
-                  <button> Cart </button>
+                <button id="checkout"> Checkout </button>
 
-                </a>
-
-                <a href=".checkout.html">
-
-                  <button> Checkout </button>
-
-                </a>
-
-                <a href="product-compairson.html">
+                <a href="product-comparison.html">
 
                   <button> Comparison </button>
 
@@ -438,7 +434,7 @@
 
           <img src="img/logo.svg">
 
-          <a href="product-compairson.html">
+          <a href="product-comparison.html">
 
             <h4> Product Comparison </h4>
 
@@ -456,7 +452,7 @@
 
           <img src="img/right-arrow2.svg">
 
-          <a href="product-compairson.html">
+          <a href="product-comparison.html">
 
             <span> Comparison </span>
 

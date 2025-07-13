@@ -3,6 +3,14 @@
 // Search search product function
 import { changePageTitle } from "./shop.js";
 
+//import subtotal calculator
+import { subtotalCalculator, calcutionSubtotal, calcutionSubtotalStep2 } from "./subtotal-calculator.js";
+//import subtotal calculator
+
+//import show the empty cart function
+import { displayEmptyCard } from "./empty-cart.js";
+//import show the empty cart function
+
 // pop up and menu's background
 var backdrop = document.getElementById('backdrop');
 // pop up and menu's background
@@ -23,6 +31,7 @@ function closePopup() {
   searchBox.style.top = '-658px';
   document.body.style.removeProperty('overflow');
   wishlist.style.display = 'none';
+  card.style.right = '-450px';
 };
 
 moblieMenuBut.onclick = function (e) {
@@ -153,9 +162,194 @@ var closeWishlist = document.getElementById('icon-menu--wishlist__close');
 closeWishlist.onclick = function () {
   closePopup();
 }
+//Wishlist
 
+//cart
+var CardButton = document.getElementById('shopCardButton');
+var card = document.getElementById('header__shop-menu');
+CardButton.onclick = function (e) {
+  e.stopPropagation();
+  closePopup();
+  headerParent.style.zIndex = '3';
+  card.style.right = '0';
+  backdrop.style.display = 'block';
+};
+
+card.onclick = function (e) {
+  e.stopPropagation();
+};
+
+var closeCard = document.getElementById('shop-menu--title__close');
+closeCard.onclick = function () {
+  closePopup();
+};
+
+function setItemToLocalhost(select, localItemName, checkInput) {
+  var productel = document.querySelectorAll(select);
+  var productsAvalibile = [];
+  productsAvalibile = Array.from(productel)
+    .filter(function (nam) {
+      if (localItemName == 'imgUrl') {
+        return !nam.parentElement.parentElement.getAttribute('style');
+      } else {
+        return !nam.parentElement.parentElement.parentElement.getAttribute('style');
+      };
+    })
+    .map(function (nam, index) {
+      if (checkInput == 'is') {
+        return nam.value;
+      } else {
+        if (localItemName == 'imgUrl') {
+          return nam.src;
+        } else {
+          if (select == '.shop-menu--products__price') {
+            var calcution1Product = '';
+            var calcution1ProductStep2 = '';
+            var productNumber = document.querySelectorAll('.shop-menu--products__number');
+            calcution1Product = nam.textContent.replace(/\D+/g, '');
+            calcution1Product = Number(calcution1Product) / Number(productNumber[index].textContent);
+            calcution1Product = calcution1Product.toString().replace('00', '');
+            calcution1ProductStep2 = Number(calcution1Product).toFixed(2).split('.');
+            var calcution1ProductFirstLenght = calcution1ProductStep2[0];
+            calcution1ProductStep2.splice(0, 1);
+            if (calcution1ProductFirstLenght.length > 3) {
+              var firstThreeOfNumber = calcution1ProductFirstLenght.slice(0, calcution1ProductFirstLenght.length - 3);
+              var secoundThreeOfNumber = calcution1ProductFirstLenght.slice(-3);
+              calcution1Product = firstThreeOfNumber + ',' + secoundThreeOfNumber;
+            };
+            return `Rs.${calcution1Product}.${calcution1ProductStep2}`;
+          } else {
+            return nam.textContent.trim();
+          }
+        };
+      };
+    });
+  localStorage.setItem(localItemName, JSON.stringify(productsAvalibile));
+};
+
+var openCartPage = document.getElementById('cart');
+function setLocalhostItemAfterChange() {
+  setItemToLocalhost('.shop-menu--products__img', 'imgUrl')
+  setItemToLocalhost('.shop-menu--products__name', 'productsName');
+  setItemToLocalhost('.shop-menu--products__price', 'productPrice');
+  setItemToLocalhost('.shop-menu--products__number', 'productNumber');
+};
+openCartPage.onclick = function () {
+  setLocalhostItemAfterChange();
+  window.location.href = 'cart.html';
+};
+
+var checkoutPage = document.getElementById('checkout');
+checkoutPage.onclick = function () {
+  setLocalhostItemAfterChange();
+  window.location.href = 'checkout.html';
+};
+
+var totalPrice = 0;
+var totalPriceDecimal = 0;
+function calculatortotal(priceElement) {
+  totalPrice = 0;
+  totalPriceDecimal = '00';
+  priceElement.forEach(function (price) {
+    if (!price.parentElement.parentElement.parentElement.getAttribute('style')) {
+      totalPrice += Number(price.textContent.replace(/\D+/g, ''));
+    };
+  });
+  totalPrice = totalPrice.toString().replace('00', '');
+  totalPriceDecimal = Number(totalPrice).toFixed(2).split('.');
+  var totalPriceLength = totalPriceDecimal[0];
+
+  totalPrice = totalPriceLength.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  totalPriceDecimal.splice(0, 1);
+};
+
+window.addEventListener('load', function () {
+  if (localStorage.getItem('productsName') !== null) {
+    var productImgUrl = JSON.parse(localStorage.getItem('imgUrl'));
+    var productName = JSON.parse(localStorage.getItem('productsName'));
+    var productPrice = JSON.parse(localStorage.getItem('productPrice'));
+    var productNumber = JSON.parse(localStorage.getItem('productNumber'));
+    var productInCartMenu = document.getElementById('header__shop-menu--products');
+
+    productInCartMenu.innerHTML = '';
+    for (var i = 0; i < productName.length; i++) {
+      var productParent = document.createElement('div');
+      var productsParent = document.getElementById('header__shop-menu--products');
+      productsParent.appendChild(productParent);
+
+      var cartProductImgParent = document.createElement('div');
+      productParent.appendChild(cartProductImgParent);
+      var cartProductImg = document.createElement('img');
+      cartProductImg.classList.add('shop-menu--products__img');
+      cartProductImg.src = productImgUrl[i];
+      cartProductImgParent.appendChild(cartProductImg);
+
+      var cartProductContent = document.createElement('div');
+      productParent.appendChild(cartProductContent);
+
+      var productNameParent = document.createElement('div');
+      cartProductContent.appendChild(productNameParent);
+
+      var productNameElement = document.createElement('p');
+      productNameElement.classList.add('shop-menu--products__name');
+      productNameElement.textContent = productName[i];
+      productNameParent.appendChild(productNameElement);
+
+      var productNameAndPriceParent = document.createElement('div');
+      cartProductContent.appendChild(productNameAndPriceParent);
+
+      var productNumberElement = document.createElement('p');
+      productNumberElement.classList.add('shop-menu--products__number');
+      productNumberElement.textContent = productNumber[i];
+      productNameAndPriceParent.appendChild(productNumberElement);
+
+      var x = document.createElement('p');
+      x.textContent = 'x';
+      productNameAndPriceParent.appendChild(x);
+
+      var newProductPriceElement = document.createElement('span');
+      newProductPriceElement.classList.add('shop-menu--products__price');
+      subtotalCalculator(productNumber[i], productPrice[i]);
+      newProductPriceElement.textContent = `Rs.${calcutionSubtotal}.${calcutionSubtotalStep2}`;
+      productNameAndPriceParent.appendChild(newProductPriceElement);
+
+      var newRemoveCardItemParent = document.createElement('div');
+      newRemoveCardItemParent.classList.add('shop-menu--products__close');
+      productParent.appendChild(newRemoveCardItemParent);
+
+      var newRemoveCardItem = document.createElement('img');
+      newRemoveCardItem.src = 'img/Close2.svg';
+      newRemoveCardItemParent.appendChild(newRemoveCardItem);
+
+    };
+
+  };
+
+  var removeCardItem = document.querySelectorAll('.shop-menu--products__close');
+  var productPriceElement = document.querySelectorAll('.shop-menu--products__price');
+  var productsTotalPrice = document.getElementById('total');
+  calculatortotal(productPriceElement);
+  productsTotalPrice.textContent = `Rs.${totalPrice}.${totalPriceDecimal}`;
+  removeCardItem.forEach(function (item) {
+    item.addEventListener('click', function () {
+      item.parentElement.style.transform = 'translateX(407px)';
+      setTimeout(() => {
+        item.parentElement.style.display = 'none';
+      }, 300);
+      calculatortotal(productPriceElement);
+      productsTotalPrice.textContent = `Rs.${totalPrice}.${totalPriceDecimal}`;
+      setLocalhostItemAfterChange();
+      displayEmptyCard('header__shop-menu--total', 'header__shop-menu--empty');
+    });
+  });
+  displayEmptyCard('header__shop-menu--total', 'header__shop-menu--empty');
+});
 // close popups and menues when click on the places in page
 window.addEventListener('click', function () {
   closePopup();
 });
 // close popups and menues when click on the places in page
+
+// export set local host item and calculator total
+export { setItemToLocalhost, calculatortotal, totalPrice, totalPriceDecimal };
+// export set local host item and calculator total
