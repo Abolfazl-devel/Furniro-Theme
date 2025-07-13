@@ -169,10 +169,14 @@ var CardButton = document.getElementById('shopCardButton');
 var card = document.getElementById('header__shop-menu');
 CardButton.onclick = function (e) {
   e.stopPropagation();
-  closePopup();
   headerParent.style.zIndex = '3';
-  card.style.right = '0';
-  backdrop.style.display = 'block';
+  if (card.style.right == '-450px') {
+    closePopup();
+    card.style.right = '0';
+    backdrop.style.display = 'none';
+  } else {
+    closePopup();
+  };
 };
 
 card.onclick = function (e) {
