@@ -36,11 +36,15 @@ function closePopup() {
 
 moblieMenuBut.onclick = function (e) {
   e.stopPropagation();
-  menu.style.left = '0';
-  menu.style.zIndex = '3';
-  headerParent.style.removeProperty('z-index');
-  backdrop.style.display = 'block';
-  profile.style.display = 'none';
+  if (menu.style.left == '-521px') {
+    closePopup();
+    menu.style.left = '0';
+    menu.style.zIndex = '3';
+    headerParent.style.zIndex = '3';
+    backdrop.style.display = 'block';
+  } else {
+    closePopup();
+  };
 };
 
 var closeMenuBut = document.getElementById('header__menu--close');
