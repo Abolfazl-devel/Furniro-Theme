@@ -148,15 +148,43 @@ WishListButton.onclick = function (e) {
   };
 };
 
-var deleteWishlistItemBut = document.querySelectorAll('.header__icon-menu--wishlist>div>div>img:first-child');
-deleteWishlistItemBut.forEach(function (but) {
-  but.onclick = function () {
-    but.parentElement.style.transform = 'translateX(-397px)';
-    setTimeout(() => {
-      but.parentElement.style.display = 'none';
-    }, 400);
+window.addEventListener('load', function () {
+  function checkLocalstorageNotEmpty() {
+    var checkDivNoneDisplay = (divs) => {
+      var checkItem = true;
+      for (var i in divs) {
+        if (divs[i].style.display !== 'none') {
+          checkItem = false;
+          break;
+        };
+      };
+      if (checkItem) {
+        document.querySelector('.header__icon-menu--wishlist > div:nth-child(2)').style.display = 'none';
+        document.querySelector('.header__icon-menu--wishlist > div:nth-child(3)').style.display = 'none';
+        document.querySelector('.header__icon-menu--wishlist > button').style.display = 'none';
+        document.getElementById('wishlistEmpty').style.display = 'flex';
+      };
+    };
+    var wishlistItem = Array.from(document.querySelectorAll('.header__icon-menu--wishlist > div > div'));;
+    wishlistItem = checkDivNoneDisplay(wishlistItem);
   };
-});
+  if (localStorage.getItem('wishlist') !== null) {
+    var getWishlist = localStorage.getItem('wishlist');
+    wishlist.innerHTML = getWishlist;
+  };
+  checkLocalstorageNotEmpty();
+  var deleteWishlistItemBut = document.querySelectorAll('.header__icon-menu--wishlist>div>div>img:first-child');
+  deleteWishlistItemBut.forEach(function (but) {
+    but.onclick = function () {
+      but.parentElement.style.transform = 'translateX(-397px)';
+      setTimeout(() => {
+        but.parentElement.style.display = 'none';
+        localStorage.setItem('wishlist', wishlist.innerHTML);
+        checkLocalstorageNotEmpty();
+      }, 400);
+    };
+  });
+})
 
 wishlist.onclick = function (e) {
   e.stopPropagation();
