@@ -615,7 +615,7 @@
 
 
 
-.header__shop-menu--products>div:nth-child(2)>div:first-child img {
+.header__shop-menu--products>div>div:first-child img {
 
     border-radius: 10px;
 
