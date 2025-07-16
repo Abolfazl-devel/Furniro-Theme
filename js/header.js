@@ -208,6 +208,106 @@ wishlist.onclick = function (e) {
   e.stopPropagation();
 }
 
+var addToCart = document.getElementById('icon-menu--wishlist__add-cart');
+addToCart.onclick = function () {
+  if (localStorage.getItem('productsName') !== null) {
+    var productImgUrl = JSON.parse(localStorage.getItem('imgUrl'));
+    var productName = JSON.parse(localStorage.getItem('productsName'));
+    var productPrice = JSON.parse(localStorage.getItem('productPrice'));
+    var productNumber = JSON.parse(localStorage.getItem('productNumber'));
+
+    function addItemToLocalstorageItem(select, specialArray, localItemName) {
+      var x = document.querySelectorAll(select);
+      if (!x.length) return;
+
+      x.forEach(function (x1) {
+        var value = (select === '.icon-menu--wishlist__img') ? x1.src : x1.textContent;
+        var index = specialArray.indexOf(value);
+        var isDuplicate = index !== -1;
+
+        if (localItemName === 'productsName') {
+          if (isDuplicate) {
+            productNumber[index] = Number(productNumber[index]) + 1;
+          } else {
+            if (!x1.parentElement.parentElement.parentElement.getAttribute('style')) {
+              specialArray.push(value);
+              productNumber.push(1);
+            };
+          };
+          return;
+        };
+
+        if (localItemName === 'imgUrl') {
+          if (!isDuplicate) {
+            if (!x1.parentElement.getAttribute('style')) {
+              specialArray.push(x1.src);
+            }
+          }
+          return;
+        };
+
+        if (!x1.parentElement.parentElement.parentElement.getAttribute('style')) {
+          if (select === '.icon-menu--wishlist__number') {
+            specialArray.push(x1.textContent.replace(/\D+/g, ''));
+          } else {
+            specialArray.push(x1.textContent + '.00');
+          };
+        };
+      });
+
+      if (localItemName !== 'productsName') {
+        localStorage.setItem(localItemName, JSON.stringify(specialArray));
+      };
+    };
+
+    addItemToLocalstorageItem('.icon-menu--wishlist__img', productImgUrl, 'imgUrl');
+    addItemToLocalstorageItem('.icon-menu--wishlist__name', productName, 'productsName');
+    addItemToLocalstorageItem('.icon-menu--wishlist__price', productPrice, 'productPrice');
+    addItemToLocalstorageItem('.icon-menu--wishlist__number', productNumber, 'productNumber');
+
+    function syncProductNameWithOther(arr, localItemName) {
+      while (arr.length > productName.length) {
+        arr.pop();
+      };
+      localStorage.setItem(localItemName, JSON.stringify(arr));
+    };
+    syncProductNameWithOther(productPrice, 'productPrice');
+    syncProductNameWithOther(productNumber, 'productNumber');
+  } else {
+    function setLocalstorageItemInWishlist(select, localItemName) {
+
+      var els = document.querySelectorAll(select);
+      var productsAvalibile = [];
+      productsAvalibile = Array.from(els)
+        .filter(function (x) {
+          if (localItemName == 'imgUrl') {
+            return !x.parentElement.getAttribute('style');
+          } else {
+            return !x.parentElement.parentElement.parentElement.getAttribute('style');
+          };
+        })
+        .map(function (x) {
+          if (localItemName == 'imgUrl') {
+            return x.src;
+          } else {
+            if (select == '.icon-menu--wishlist__number') {
+              return x.textContent.replace(/\D+/g, '').trim();
+            } else if (select == '.icon-menu--wishlist__price') {
+              return x.textContent + '.00';
+            } else {
+              return x.textContent.trim();
+            };
+          };
+        });
+      localStorage.setItem(localItemName, JSON.stringify(productsAvalibile));
+    };
+    setLocalstorageItemInWishlist('.icon-menu--wishlist__img', 'imgUrl');
+    setLocalstorageItemInWishlist('.icon-menu--wishlist__name', 'productsName');
+    setLocalstorageItemInWishlist('.icon-menu--wishlist__price', 'productPrice');
+    setLocalstorageItemInWishlist('.icon-menu--wishlist__number', 'productNumber');
+  };
+};
+
 //Wishlist
 
 //cart
