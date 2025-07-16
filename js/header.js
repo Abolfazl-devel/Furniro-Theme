@@ -306,6 +306,7 @@ addToCart.onclick = function () {
     setLocalstorageItemInWishlist('.icon-menu--wishlist__price', 'productPrice');
     setLocalstorageItemInWishlist('.icon-menu--wishlist__number', 'productNumber');
   };
+  window.postMessage('cart Changed');
 };
 
 //Wishlist
@@ -413,8 +414,9 @@ function calculatortotal(priceElement) {
   totalPriceDecimal.splice(0, 1);
 };
 
-window.addEventListener('load', function () {
+function updatepopUpCart() {
   if (localStorage.getItem('productsName') !== null) {
+
     var productImgUrl = JSON.parse(localStorage.getItem('imgUrl'));
     var productName = JSON.parse(localStorage.getItem('productsName'));
     var productPrice = JSON.parse(localStorage.getItem('productPrice'));
@@ -472,9 +474,7 @@ window.addEventListener('load', function () {
       newRemoveCardItemParent.appendChild(newRemoveCardItem);
 
     };
-
   };
-
   var removeCardItem = document.querySelectorAll('.shop-menu--products__close');
   var productPriceElement = document.querySelectorAll('.shop-menu--products__price');
   var productsTotalPrice = document.getElementById('total');
@@ -493,6 +493,18 @@ window.addEventListener('load', function () {
     });
   });
   displayEmptyCard('header__shop-menu--total', 'header__shop-menu--empty');
+};
+
+window.addEventListener('load', function () {
+  updatepopUpCart();
+});
+
+window.addEventListener('message', function (e) {
+  if (e.origin === 'http://localhost') {
+    if (e.data == 'cart Changed') {
+      updatepopUpCart();
+    };
+  };
 });
 // close popups and menues when click on the places in page
 window.addEventListener('click', function () {
