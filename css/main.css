@@ -2910,7 +2910,7 @@ input[id=network-list] {
 
 
 
-.product-box__button button {
+.product-box__button a {
 
     border: 1px solid #B98E2F;
 
@@ -2925,6 +2925,9 @@ input[id=network-list] {
     font-weight: 600;
 
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
