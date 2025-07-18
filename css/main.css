@@ -3613,7 +3613,10 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.slider__content button {
+.slider__content a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     width: 200px;
 
