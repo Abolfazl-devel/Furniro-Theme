@@ -2740,7 +2740,16 @@ input[id=network-list] {
     height: 50px;
 
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 
+}
+
+.product__hover-content--button button img {
+    position: absolute;
+    top: -17px;
+    width: 80px;
+    left: 61px;
 }
 
 
