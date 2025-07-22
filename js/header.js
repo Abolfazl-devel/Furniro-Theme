@@ -319,7 +319,7 @@ CardButton.onclick = function (e) {
   headerParent.style.zIndex = '3';
   if (card.style.right == '-450px') {
     closePopup();
-    card.style.right = '0';
+    card.style.right = '112px';
     backdrop.style.display = 'block';
   } else {
     closePopup();
