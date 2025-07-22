@@ -900,7 +900,9 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
 }
 
 @media only screen and (max-width:555px) {
-    #profileButton {
+
+    #profileButton,
+    #shopCardButton {
         position: unset;
     }
 
