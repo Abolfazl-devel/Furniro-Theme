@@ -3659,13 +3659,10 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 .slider__img>img {
     transition: all ease 0.3s;
+    overflow: hidden;
 }
 
 .slider__active>img {
-    /* min-width: 404px !important;
-    max-width: 404px !important;
-    min-height: 582px !important;
-    max-height: 582px !important; */
     transform: scale(1.2);
 }
 
@@ -3830,6 +3827,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     position: relative;
 
     margin-right: 20px;
+    cursor: pointer;
 
 }
 
