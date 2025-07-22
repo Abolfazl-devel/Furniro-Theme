@@ -529,7 +529,7 @@
 
     position: absolute;
 
-    top: 117px;
+    top: 83px;
 
     background-color: #fff !important;
 
@@ -911,6 +911,10 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
         width: 100%;
         top: 115px;
     }
+
+    .header__shop-menu {
+        top: 115px;
+    }
 }
 
 @media only screen and (max-width:530px) {
@@ -931,6 +935,7 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
         left: 0;
         top: 115px;
     }
+
 }
 
 @media only screen and (max-width:440px) {

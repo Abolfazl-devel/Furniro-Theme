@@ -31,7 +31,7 @@ function closePopup() {
   searchBox.style.top = '-658px';
   document.body.style.removeProperty('overflow');
   wishlist.style.display = 'none';
-  card.style.right = '-450px';
+  card.style.right = '-573px';
 };
 
 moblieMenuBut.onclick = function (e) {
@@ -317,7 +317,7 @@ var card = document.getElementById('header__shop-menu');
 CardButton.onclick = function (e) {
   e.stopPropagation();
   headerParent.style.zIndex = '3';
-  if (card.style.right == '-450px') {
+  if (card.style.right == '-573px') {
     closePopup();
     card.style.right = '0';
     backdrop.style.display = 'block';
