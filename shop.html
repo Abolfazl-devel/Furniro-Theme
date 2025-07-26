@@ -471,17 +471,18 @@
 
             <span> Filter </span>
 
-            <label for="network-list">
+            <button id="networkShow">
 
-              <img src="img/network.svg">
+              <img src="img/network.svg"
+                style="filter: brightness(0) saturate(100%) invert(45%) sepia(0%) saturate(1074%) hue-rotate(254deg) brightness(97%) contrast(83%);">
 
-            </label>
+            </button>
 
-            <label for="network-list">
+            <button id="listShow">
 
               <img src="img/list.svg">
 
-            </label>
+            </button>
 
           </div>
 
@@ -563,11 +564,9 @@
 
     <!-- start product box list -->
 
-    <input type="checkbox" id="network-list">
-
     <div class="w-100">
 
-      <div class="product-box-network mx-width">
+      <div class="product-box-network mx-width" id="product-box-network">
 
         <div class="product-box-network__products">
 
@@ -1709,7 +1708,7 @@
 
     <div class="w-100">
 
-      <div class="product-box-list mx-width">
+      <div class="product-box-list mx-width" id="product-box-list">
 
         <div class="product-box-list__products">
 

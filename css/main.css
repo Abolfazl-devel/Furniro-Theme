@@ -2244,11 +2244,13 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
 
 
 
-.filter__icon label {
+.filter__icon button {
 
     margin-right: 15px;
 
     cursor: pointer;
+    background-color: transparent;
+    border: none;
 
 }
 
