@@ -202,6 +202,9 @@
 .header__menu a {
     color: #000;
     cursor: pointer;
+    position: relative;
+    /*! display: flex; */
+    justify-content: center;
 }
 
 .header__menu>ul>li:nth-child(5),
@@ -803,9 +806,39 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
     background-color: #b98e2f;
 }
 
+.header__menu>ul>li:hover>a::after {
+    -webkit-transform-origin: right;
+    -ms-transform-origin: right;
+    transform-origin: right;
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+}
+
 /* end header hover */
 
 /* start header after and before */
+.header__menu>ul>li>a::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    border-radius: 15px;
+    background: #b98e2f;
+    bottom: -8px;
+    left: 36%;
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
 .header__menu a::before {
     content: "\2023";
 
@@ -865,6 +898,7 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
     .header__menu>ul>li>a {
         padding-left: 70px;
         transition: all ease 0.3s;
+        position: unset;
     }
 
     .header__menu>ul>li {
@@ -893,6 +927,11 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
     .header__menu>ul>li:hover>a::before {
 
         left: 37px;
+
+    }
+
+    .header__menu>ul>li>a::after {
+        display: none;
 
     }
 
