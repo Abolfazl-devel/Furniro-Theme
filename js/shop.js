@@ -138,6 +138,7 @@ function filterNumberEvent() {
 filterNumberEvent();
 window.addEventListener('click', function () {
   filterNumberChoiseBox.style.display = 'none';
+  mainFilterBox.style.display = 'none';
 });
 
 var mainFilter = document.getElementById('FilterEverything');
