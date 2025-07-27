@@ -2393,18 +2393,21 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
 
     width: 121px;
 
-    left: 66px;
+    left: 8px;
 
     padding-left: 20px;
 
     padding-top: 10px;
+    padding-bottom: 10px;
 
 }
+
 
 
 .filter__filters div div div span:first-child {
     margin-right: 0;
     color: #000;
+    padding-left: 0 !important;
 }
 
 .filter__filters div div div span:last-child {

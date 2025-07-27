@@ -37,6 +37,36 @@ window.addEventListener('load', function () {
 });
 
 // Filter
+
+function addOrRemoveProduct() {
+  console.log('worked');
+  produtsNetwork = document.querySelectorAll('.product-box-network .products__product');
+  productList = document.querySelectorAll('.product-box-list .products__product');
+
+  if (produtsNetwork.length - 1 <= Number(numberFilter.textContent)) {
+    var productNumber = 0;
+    for (var t = produtsNetwork.length - 1; t < Number(numberFilter.textContent) - 1; t++) {
+      function duplicateProduct(parent) {
+        var cloneProduct = produtsNetwork[productNumber].cloneNode(true);
+        parent.appendChild(cloneProduct);
+        productNumber += 1;
+        if (productNumber == 4) {
+          productNumber = 0;
+        };
+      };
+      duplicateProduct(ProductsBoxsecoundParentNetwork);
+      duplicateProduct(ProductsBoxsecoundParentlist);
+    };
+  } else {
+    for (var i = produtsNetwork.length - 1; i >= Number(numberFilter.textContent); i--) {
+      console.log(produtsNetwork[i]);
+
+      produtsNetwork[i].remove();
+      productList[i].remove();
+    };
+  };
+};
+
 var filterParent = document.getElementById('filter');
 var productsBoxParent = document.getElementById('productsBoxParent');
 if (localStorage.getItem('whatFilterUse') !== null) {
@@ -61,20 +91,21 @@ numberFilter.onclick = function (event) {
 var allNumberFilter = document.querySelectorAll('.NumberFilterOption');
 var produtsNetwork = document.querySelectorAll('.product-box-network .products__product');
 var productList = document.querySelectorAll('.product-box-list .products__product');
-
+var loadFiles = document.getElementById('fileLoading');
+var ProductsBoxsecoundParentNetwork = document.getElementById('secoundProductsParent');
+var ProductsBoxsecoundParentlist = document.getElementById('secoundProductsParentList');
 function filterNumberEvent() {
   allNumberFilter.forEach(function (item) {
     item.addEventListener('click', function clicknumberFiltreEvent(event) {
       event.stopPropagation();
       filterNumberChoiseBox.style.display = 'none';
       numberFilter.textContent = item.textContent;
-      var loadFiles = document.getElementById('fileLoading');
       productsBoxParent.style.display = 'none';
       loadFiles.style.display = 'block';
       item.classList.add('NumberFilterOption');
       filterNumberChoiseBox.insertBefore(item, filterNumberChoiseBox.firstElementChild);
       filterNumberChoiseBox.firstElementChild.removeAttribute('class');
-      filterNumberChoiseBox.firstElementChild.removeEventListener('click', clicknumberFiltreEvent)
+      filterNumberChoiseBox.firstElementChild.removeEventListener('click', clicknumberFiltreEvent);
       var filterSecoundChild = document.querySelector('.filter__filters div div div span:nth-child(2)');
       filterSecoundChild.classList.add('NumberFilterOption');
       allNumberFilter = document.querySelectorAll('.NumberFilterOption');
@@ -94,28 +125,7 @@ function filterNumberEvent() {
       setTimeout(() => {
         produtsNetwork = document.querySelectorAll('.product-box-network .products__product');
         productList = document.querySelectorAll('.product-box-list .products__product');
-        if (produtsNetwork.length - 1 <= Number(item.textContent)) {
-          var ProductsBoxsecoundParentNetwork = document.getElementById('secoundProductsParent');
-          var ProductsBoxsecoundParentlist = document.getElementById('secoundProductsParentList');
-          var productNumber = 0;
-          for (var t = produtsNetwork.length - 1; t < Number(item.textContent) - 1; t++) {
-            function duplicateProduct(parent) {
-              var cloneProduct = produtsNetwork[productNumber].cloneNode(true);
-              parent.appendChild(cloneProduct);
-              productNumber += 1;
-              if (productNumber == 4) {
-                productNumber = 0;
-              };
-            };
-            duplicateProduct(ProductsBoxsecoundParentNetwork);
-            duplicateProduct(ProductsBoxsecoundParentlist);
-          };
-        } else {
-          for (var i = produtsNetwork.length - 1; i >= Number(item.textContent); i--) {
-            produtsNetwork[i].remove();
-            productList[i].remove();
-          };
-        };
+        addOrRemoveProduct();
         productsBoxParent.style.display = 'block';
         loadFiles.style.display = 'none';
         localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
@@ -129,6 +139,1178 @@ filterNumberEvent();
 window.addEventListener('click', function () {
   filterNumberChoiseBox.style.display = 'none';
 });
+
+var mainFilter = document.getElementById('FilterEverything');
+var mainFilterItem = document.querySelectorAll('.mainFilterItem');
+var mainFilterBox = document.getElementById('mainFilterBox');
+mainFilter.onclick = function (event) {
+  event.stopPropagation();
+  if (mainFilterBox.style.display == 'none') {
+    mainFilterBox.style.display = 'flex';
+  } else {
+    mainFilterBox.style.display = 'none';
+  };
+};
+
+function setEventForMainFilter() {
+  mainFilterItem.forEach(function (filterItem) {
+    filterItem.addEventListener('click', function clickMainFilter(event) {
+      event.stopPropagation();
+      mainFilterBox.style.display = 'none';
+      productsBoxParent.style.display = 'none';
+      loadFiles.style.display = 'block';
+      mainFilter.textContent = filterItem.textContent;
+      mainFilterBox.insertBefore(filterItem, mainFilterBox.firstElementChild);
+      mainFilterBox.firstElementChild.removeAttribute('class');
+      mainFilterBox.firstElementChild.removeEventListener('click', clickMainFilter);
+      var filterSecoundChild = document.querySelector('.filter__filters div:last-child div div span:nth-child(2)');
+      filterSecoundChild.classList.add('mainFilterItem');
+      mainFilterItem = document.querySelectorAll('.mainFilterItem');
+      setEventForMainFilter();
+      if (filterItem.textContent == ' Cheapest ' || filterItem.textContent == ' The most expensive') {
+        function priceCompareer(container) {
+          var singleProduct = Array.from(container.getElementsByClassName('products__product'));
+          var sorting = [...singleProduct].sort((a, b) => {
+            var priceA = parseFloat(a.querySelector('.product__caption h6').textContent.replace(/\D+/g, ''));
+            var priceB = parseFloat(b.querySelector('.product__caption h6').textContent.replace(/\D+/g, ''));
+            return filterItem.textContent.includes('Cheapest') ? priceA - priceB : priceB - priceA;
+          });
+          sorting.forEach(item => container.insertBefore(item, null));
+        };
+        priceCompareer(ProductsBoxsecoundParentNetwork);
+        priceCompareer(ProductsBoxsecoundParentlist);
+      } else {
+        function changeInnerHtmlAfterSettingFilter(div) {
+          div.innerHTML = `
+
+            <div class="products__product">
+
+              <img src="img/product1.png">
+
+              <div class="product__discount">
+
+                <p> -30% </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Syltherine </h5>
+
+                <p class="product__caption--name"> Stylish cafe chair </p>
+
+                <div class="product__price">
+
+                  <h6> Rp 2.500.000 </h6>
+
+                  <del> Rp 3.500.000 </del>
+
+                </div>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product2.png">
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Leviosa </h5>
+
+                <p class="product__caption--name"> Stylish cafe chair </p>
+
+                <h6> Rp 2.500.000 </h6>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product3.png">
+
+              <div class="product__discount">
+
+                <p> -50% </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Lolito </h5>
+
+                <p class="product__caption--name"> Luxury big sofa </p>
+
+                <div class="product__price">
+
+                  <h6> Rp 7.000.000 </h6>
+
+                  <del> Rp 14.000.000 </del>
+
+                </div>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product4.png">
+
+              <div class="product__marker">
+
+                <p> New </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Respira </h5>
+
+                <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                <h6> Rp 500.000 </h6>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product1.png">
+
+              <div class="product__discount">
+
+                <p> -30% </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Syltherine </h5>
+
+                <p class="product__caption--name"> Stylish cafe chair </p>
+
+                <div class="product__price">
+
+                  <h6> Rp 2.500.000 </h6>
+
+                  <del> Rp 3.500.000 </del>
+
+                </div>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product2.png">
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Leviosa </h5>
+
+                <p class="product__caption--name"> Stylish cafe chair </p>
+
+                <h6> Rp 2.500.000 </h6>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product3.png">
+
+              <div class="product__discount">
+
+                <p> -50% </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Lolito </h5>
+
+                <p class="product__caption--name"> Luxury big sofa </p>
+
+                <div class="product__price">
+
+                  <h6> Rp 7.000.000 </h6>
+
+                  <del> Rp 14.000.000 </del>
+
+                </div>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product4.png">
+
+              <div class="product__marker">
+
+                <p> New </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Respira </h5>
+
+                <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                <h6> Rp 500.000 </h6>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product1.png">
+
+              <div class="product__discount">
+
+                <p> -30% </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Syltherine </h5>
+
+                <p class="product__caption--name"> Stylish cafe chair </p>
+
+                <div class="product__price">
+
+                  <h6> Rp 2.500.000 </h6>
+
+                  <del> Rp 3.500.000 </del>
+
+                </div>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product2.png">
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Leviosa </h5>
+
+                <p class="product__caption--name"> Stylish cafe chair </p>
+
+                <h6> Rp 2.500.000 </h6>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product3.png">
+
+              <div class="product__discount">
+
+                <p> -50% </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Lolito </h5>
+
+                <p class="product__caption--name"> Luxury big sofa </p>
+
+                <div class="product__price">
+
+                  <h6> Rp 7.000.000 </h6>
+
+                  <del> Rp 14.000.000 </del>
+
+                </div>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product4.png">
+
+              <div class="product__marker">
+
+                <p> New </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Respira </h5>
+
+                <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                <h6> Rp 500.000 </h6>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product1.png">
+
+              <div class="product__discount">
+
+                <p> -30% </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Syltherine </h5>
+
+                <p class="product__caption--name"> Stylish cafe chair </p>
+
+                <div class="product__price">
+
+                  <h6> Rp 2.500.000 </h6>
+
+                  <del> Rp 3.500.000 </del>
+
+                </div>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product2.png">
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Leviosa </h5>
+
+                <p class="product__caption--name"> Stylish cafe chair </p>
+
+                <h6> Rp 2.500.000 </h6>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product3.png">
+
+              <div class="product__discount">
+
+                <p> -50% </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Lolito </h5>
+
+                <p class="product__caption--name"> Luxury big sofa </p>
+
+                <div class="product__price">
+
+                  <h6> Rp 7.000.000 </h6>
+
+                  <del> Rp 14.000.000 </del>
+
+                </div>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="products__product">
+
+              <img src="img/product4.png">
+
+              <div class="product__marker">
+
+                <p> New </p>
+
+              </div>
+
+              <div class="product__caption">
+
+                <h5 class="product__caption--name"> Respira </h5>
+
+                <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                <h6> Rp 500.000 </h6>
+
+              </div>
+
+              <div class="product__hover">
+
+                <div class="product__hover-content">
+
+                  <div class="product__hover-content--button">
+
+                    <button> Add to card </button>
+
+                  </div>
+
+                  <div class="product__hover--img">
+
+                    <div>
+
+                      <img src="img/share.svg">
+
+                      <span> Share </span>
+
+                    </div>
+
+                    <div>
+
+                      <a href="product-comparison.html">
+
+                        <img src="img/compare.svg">
+
+                        <span> Compare </span>
+
+                      </a>
+
+                    </div>
+
+                    <div>
+
+                      <img src="img/heart1.svg">
+
+                      <span> Like </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>`;
+        };
+        changeInnerHtmlAfterSettingFilter(ProductsBoxsecoundParentNetwork);
+        changeInnerHtmlAfterSettingFilter(ProductsBoxsecoundParentlist);
+        addingProductOnPage();
+        addOrRemoveProduct();
+      };
+      localStorage.setItem('whatFilterUse', filterParent.innerHTML);
+      localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
+      setTimeout(() => {
+        productsBoxParent.style.display = 'block';
+        loadFiles.style.display = 'none';
+      }, 2000);
+    });
+  });
+};
+setEventForMainFilter();
+
 //Showing part
 var networkShowing = document.getElementById('networkShow');
 var newworkBox = document.getElementById('product-box-network');
@@ -153,6 +1335,6 @@ var listShowing = document.getElementById('listShow');
 listShowing.onclick = function () {
   showingByFilter(listBox, newworkBox, '#listShow > img', '#networkShow > img');
   localStorage.setItem('whatFilterUse', filterParent.innerHTML);
-  localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML)
+  localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
 };
 //Showing part
