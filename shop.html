@@ -461,7 +461,7 @@
 
     <div class="w-100 w-100-filter">
 
-      <div class="filter mx-width">
+      <div class="filter mx-width" id="filter">
 
         <div class="filter__icon-description">
 
@@ -488,7 +488,7 @@
 
           <div class="filter__description">
 
-            <span> Showing 1-16 of 32 results </span>
+            <span id="filter__description"> Showing 1-16 of 32 results </span>
 
           </div>
 
@@ -500,25 +500,23 @@
 
             <span> Show </span>
 
-            <label>
+            <div>
 
-              <span> 16 </span>
+              <span id="setNumberOfShow"> 16 </span>
 
-              <input type="checkbox">
+              <div id="showNumberBox" style="display: none;">
 
-              <div>
+                <span> 16 </span>
 
-                <span style="margin-right: 0;"> 16 </span>
+                <span class="NumberFilterOption"> 12 </span>
 
-                <span> 12 </span>
+                <span class="NumberFilterOption"> 8 </span>
 
-                <span> 8 </span>
-
-                <span style="margin-bottom: 0;"> 4 </span>
+                <span class="NumberFilterOption"> 4 </span>
 
               </div>
 
-            </label>
+            </div>
 
           </div>
 
@@ -526,11 +524,9 @@
 
             <span> Sort by </span>
 
-            <label>
+            <div>
 
               <span> Default </span>
-
-              <input type="checkbox">
 
               <div>
 
@@ -548,7 +544,7 @@
 
               </div>
 
-            </label>
+            </div>
 
           </div>
 
@@ -561,140 +557,87 @@
     <!-- end filter -->
 
 
+    <div class="productsPartParent">
 
-    <!-- start product box list -->
+      <!-- Loading -->
+      <img src="img/loading.gif" style="width: 50px;height: 50px;display: none;padding-top: 37px;" id="fileLoading">
+      <!-- Loading -->
 
-    <div class="w-100">
+      <div id="productsBoxParent" style="width: 100%;">
+        <!-- start product box list -->
+        <div class="w-100">
 
-      <div class="product-box-network mx-width" id="product-box-network">
+          <div class="product-box-network mx-width" id="product-box-network">
 
-        <div class="product-box-network__products">
+            <div class="product-box-network__products" id="secoundProductsParent">
 
-          <div class="products__product">
+              <div class="products__product">
 
-            <img src="img/product1.png">
+                <img src="img/product1.png">
 
-            <div class="product__discount">
+                <div class="product__discount">
 
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Syltherine </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
+                  <p> -30% </p>
 
                 </div>
 
-                <div class="product__hover--img">
+                <div class="product__caption">
 
-                  <div>
+                  <h5 class="product__caption--name"> Syltherine </h5>
 
-                    <img src="img/share.svg">
+                  <p class="product__caption--name"> Stylish cafe chair </p>
 
-                    <span> Share </span>
+                  <div class="product__price">
 
-                  </div>
+                    <h6> Rp 2.500.000 </h6>
 
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
+                    <del> Rp 3.500.000 </del>
 
                   </div>
 
                 </div>
 
-              </div>
+                <div class="product__hover">
 
-            </div>
+                  <div class="product__hover-content">
 
-          </div>
+                    <div class="product__hover-content--button">
 
-          <div class="products__product">
+                      <button> Add to card </button>
 
-            <img src="img/product2.png">
+                    </div>
 
-            <div class="product__caption">
+                    <div class="product__hover--img">
 
-              <h5 class="product__caption--name"> Leviosa </h5>
+                      <div>
 
-              <p class="product__caption--name"> Stylish cafe chair </p>
+                        <img src="img/share.svg">
 
-              <h6> Rp 2.500.000 </h6>
+                        <span> Share </span>
 
-            </div>
+                      </div>
 
-            <div class="product__hover">
+                      <div>
 
-              <div class="product__hover-content">
+                        <a href="product-comparison.html">
 
-                <div class="product__hover-content--button">
+                          <img src="img/compare.svg">
 
-                  <button> Add to card </button>
+                          <span> Compare </span>
 
-                </div>
+                        </a>
 
-                <div class="product__hover--img">
+                      </div>
 
-                  <div>
+                      <div>
 
-                    <img src="img/share.svg">
+                        <img src="img/heart1.svg">
 
-                    <span> Share </span>
+                        <span> Like </span>
 
-                  </div>
+                      </div>
 
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
+                    </div>
 
                   </div>
 
@@ -702,73 +645,61 @@
 
               </div>
 
-            </div>
+              <div class="products__product">
 
-          </div>
+                <img src="img/product2.png">
 
-          <div class="products__product">
+                <div class="product__caption">
 
-            <img src="img/product3.png">
+                  <h5 class="product__caption--name"> Leviosa </h5>
 
-            <div class="product__discount">
+                  <p class="product__caption--name"> Stylish cafe chair </p>
 
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Lolito </h5>
-
-              <p class="product__caption--name"> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
+                  <h6> Rp 2.500.000 </h6>
 
                 </div>
 
-                <div class="product__hover--img">
+                <div class="product__hover">
 
-                  <div>
+                  <div class="product__hover-content">
 
-                    <img src="img/share.svg">
+                    <div class="product__hover-content--button">
 
-                    <span> Share </span>
+                      <button> Add to card </button>
 
-                  </div>
+                    </div>
 
-                  <div>
+                    <div class="product__hover--img">
 
-                    <a href="product-comparison.html">
+                      <div>
 
-                      <img src="img/compare.svg">
+                        <img src="img/share.svg">
 
-                      <span> Compare </span>
+                        <span> Share </span>
 
-                    </a>
+                      </div>
 
-                  </div>
+                      <div>
 
-                  <div>
+                        <a href="product-comparison.html">
 
-                    <img src="img/heart1.svg">
+                          <img src="img/compare.svg">
 
-                    <span> Like </span>
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
 
                   </div>
 
@@ -776,67 +707,975 @@
 
               </div>
 
-            </div>
+              <div class="products__product">
 
-          </div>
+                <img src="img/product3.png">
 
-          <div class="products__product">
+                <div class="product__discount">
 
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Respira </h5>
-
-              <p class="product__caption--name"> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
+                  <p> -50% </p>
 
                 </div>
 
-                <div class="product__hover--img">
+                <div class="product__caption">
 
-                  <div>
+                  <h5 class="product__caption--name"> Lolito </h5>
 
-                    <img src="img/share.svg">
+                  <p class="product__caption--name"> Luxury big sofa </p>
 
-                    <span> Share </span>
+                  <div class="product__price">
 
-                  </div>
+                    <h6> Rp 7.000.000 </h6>
 
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
+                    <del> Rp 14.000.000 </del>
 
                   </div>
 
-                  <div>
+                </div>
 
-                    <img src="img/heart1.svg">
+                <div class="product__hover">
 
-                    <span> Like </span>
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product4.png">
+
+                <div class="product__marker">
+
+                  <p> New </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Respira </h5>
+
+                  <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                  <h6> Rp 500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product1.png">
+
+                <div class="product__discount">
+
+                  <p> -30% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Syltherine </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 2.500.000 </h6>
+
+                    <del> Rp 3.500.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product2.png">
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Leviosa </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <h6> Rp 2.500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product3.png">
+
+                <div class="product__discount">
+
+                  <p> -50% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Lolito </h5>
+
+                  <p class="product__caption--name"> Luxury big sofa </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 7.000.000 </h6>
+
+                    <del> Rp 14.000.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product4.png">
+
+                <div class="product__marker">
+
+                  <p> New </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Respira </h5>
+
+                  <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                  <h6> Rp 500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product1.png">
+
+                <div class="product__discount">
+
+                  <p> -30% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Syltherine </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 2.500.000 </h6>
+
+                    <del> Rp 3.500.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product2.png">
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Leviosa </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <h6> Rp 2.500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product3.png">
+
+                <div class="product__discount">
+
+                  <p> -50% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Lolito </h5>
+
+                  <p class="product__caption--name"> Luxury big sofa </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 7.000.000 </h6>
+
+                    <del> Rp 14.000.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product4.png">
+
+                <div class="product__marker">
+
+                  <p> New </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Respira </h5>
+
+                  <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                  <h6> Rp 500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product1.png">
+
+                <div class="product__discount">
+
+                  <p> -30% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Syltherine </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 2.500.000 </h6>
+
+                    <del> Rp 3.500.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product2.png">
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Leviosa </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <h6> Rp 2.500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product3.png">
+
+                <div class="product__discount">
+
+                  <p> -50% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Lolito </h5>
+
+                  <p class="product__caption--name"> Luxury big sofa </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 7.000.000 </h6>
+
+                    <del> Rp 14.000.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product4.png">
+
+                <div class="product__marker">
+
+                  <p> New </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Respira </h5>
+
+                  <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                  <h6> Rp 500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
 
                   </div>
 
@@ -846,837 +1685,15 @@
 
             </div>
 
-          </div>
+            <div class="product-box__indicating">
 
-          <div class="products__product">
+              <span> 1 </span>
 
-            <img src="img/product1.png">
+              <span> 2 </span>
 
-            <div class="product__discount">
+              <span> 3 </span>
 
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Syltherine </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product2.png">
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Leviosa </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <h6> Rp 2.500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product3.png">
-
-            <div class="product__discount">
-
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Lolito </h5>
-
-              <p class="product__caption--name"> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Respira </h5>
-
-              <p class="product__caption--name"> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product1.png">
-
-            <div class="product__discount">
-
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Syltherine </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product2.png">
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Leviosa </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <h6> Rp 2.500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product3.png">
-
-            <div class="product__discount">
-
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Lolito </h5>
-
-              <p class="product__caption--name"> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Respira </h5>
-
-              <p class="product__caption--name"> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product1.png">
-
-            <div class="product__discount">
-
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Syltherine </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product2.png">
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Leviosa </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <h6> Rp 2.500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product3.png">
-
-            <div class="product__discount">
-
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Lolito </h5>
-
-              <p class="product__caption--name"> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Respira </h5>
-
-              <p class="product__caption--name"> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
+              <button> Next </button>
 
             </div>
 
@@ -1684,1168 +1701,1151 @@
 
         </div>
 
-        <div class="product-box__indicating">
+        <!-- end product box network-->
 
-          <span> 1 </span>
 
-          <span> 2 </span>
 
-          <span> 3 </span>
+        <!-- start product box list -->
 
-          <button> Next </button>
+        <div class="w-100">
+
+          <div class="product-box-list mx-width" id="product-box-list">
+
+            <div class="product-box-list__products" id="secoundProductsParentList">
+
+              <div class="products__product">
+
+                <img src="img/product1.png">
+
+                <div class="product__discount">
+
+                  <p> -30% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Syltherine </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 2.500.000 </h6>
+
+                    <del> Rp 3.500.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product2.png">
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Leviosa </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <h6> Rp 2.500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product3.png">
+
+                <div class="product__discount">
+
+                  <p> -50% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Lolito </h5>
+
+                  <p class="product__caption--name"> Luxury big sofa </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 7.000.000 </h6>
+
+                    <del> Rp 14.000.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product4.png">
+
+                <div class="product__marker">
+
+                  <p> New </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Respira </h5>
+
+                  <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                  <h6> Rp 500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product1.png">
+
+                <div class="product__discount">
+
+                  <p> -30% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Syltherine </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 2.500.000 </h6>
+
+                    <del> Rp 3.500.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product2.png">
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Leviosa </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <h6> Rp 2.500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product3.png">
+
+                <div class="product__discount">
+
+                  <p> -50% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Lolito </h5>
+
+                  <p class="product__caption--name"> Luxury big sofa </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 7.000.000 </h6>
+
+                    <del> Rp 14.000.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product4.png">
+
+                <div class="product__marker">
+
+                  <p> New </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Respira </h5>
+
+                  <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                  <h6> Rp 500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product1.png">
+
+                <div class="product__discount">
+
+                  <p> -30% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Syltherine </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 2.500.000 </h6>
+
+                    <del> Rp 3.500.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product2.png">
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Leviosa </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <h6> Rp 2.500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product3.png">
+
+                <div class="product__discount">
+
+                  <p> -50% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Lolito </h5>
+
+                  <p class="product__caption--name"> Luxury big sofa </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 7.000.000 </h6>
+
+                    <del> Rp 14.000.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product4.png">
+
+                <div class="product__marker">
+
+                  <p> New </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Respira </h5>
+
+                  <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                  <h6> Rp 500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product1.png">
+
+                <div class="product__discount">
+
+                  <p> -30% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Syltherine </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 2.500.000 </h6>
+
+                    <del> Rp 3.500.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product2.png">
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Leviosa </h5>
+
+                  <p class="product__caption--name"> Stylish cafe chair </p>
+
+                  <h6> Rp 2.500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product3.png">
+
+                <div class="product__discount">
+
+                  <p> -50% </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Lolito </h5>
+
+                  <p class="product__caption--name"> Luxury big sofa </p>
+
+                  <div class="product__price">
+
+                    <h6> Rp 7.000.000 </h6>
+
+                    <del> Rp 14.000.000 </del>
+
+                  </div>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="products__product">
+
+                <img src="img/product4.png">
+
+                <div class="product__marker">
+
+                  <p> New </p>
+
+                </div>
+
+                <div class="product__caption">
+
+                  <h5 class="product__caption--name"> Respira </h5>
+
+                  <p class="product__caption--name"> Outdoor bar table and stool </p>
+
+                  <h6> Rp 500.000 </h6>
+
+                </div>
+
+                <div class="product__hover">
+
+                  <div class="product__hover-content">
+
+                    <div class="product__hover-content--button">
+
+                      <button> Add to card </button>
+
+                    </div>
+
+                    <div class="product__hover--img">
+
+                      <div>
+
+                        <img src="img/share.svg">
+
+                        <span> Share </span>
+
+                      </div>
+
+                      <div>
+
+                        <a href="product-comparison.html">
+
+                          <img src="img/compare.svg">
+
+                          <span> Compare </span>
+
+                        </a>
+
+                      </div>
+
+                      <div>
+
+                        <img src="img/heart1.svg">
+
+                        <span> Like </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="product-box__indicating">
+
+              <span> 1 </span>
+
+              <span> 2 </span>
+
+              <span> 3 </span>
+
+              <button> Next </button>
+
+            </div>
+
+          </div>
 
         </div>
 
+        <!-- end product box list-->
       </div>
-
     </div>
-
-    <!-- end product box network-->
-
-
-
-    <!-- start product box list -->
-
-    <div class="w-100">
-
-      <div class="product-box-list mx-width" id="product-box-list">
-
-        <div class="product-box-list__products">
-
-          <div class="products__product">
-
-            <img src="img/product1.png">
-
-            <div class="product__discount">
-
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Syltherine </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product2.png">
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Leviosa </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <h6> Rp 2.500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product3.png">
-
-            <div class="product__discount">
-
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Lolito </h5>
-
-              <p class="product__caption--name"> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Respira </h5>
-
-              <p class="product__caption--name"> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product1.png">
-
-            <div class="product__discount">
-
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Syltherine </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product2.png">
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Leviosa </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <h6> Rp 2.500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product3.png">
-
-            <div class="product__discount">
-
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Lolito </h5>
-
-              <p class="product__caption--name"> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Respira </h5>
-
-              <p class="product__caption--name"> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product1.png">
-
-            <div class="product__discount">
-
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Syltherine </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product2.png">
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Leviosa </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <h6> Rp 2.500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product3.png">
-
-            <div class="product__discount">
-
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Lolito </h5>
-
-              <p class="product__caption--name"> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Respira </h5>
-
-              <p class="product__caption--name"> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product1.png">
-
-            <div class="product__discount">
-
-              <p> -30% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Syltherine </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <div class="product__price">
-
-                <h6> Rp 2.500.000 </h6>
-
-                <del> Rp 3.500.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product2.png">
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Leviosa </h5>
-
-              <p class="product__caption--name"> Stylish cafe chair </p>
-
-              <h6> Rp 2.500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product3.png">
-
-            <div class="product__discount">
-
-              <p> -50% </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Lolito </h5>
-
-              <p class="product__caption--name"> Luxury big sofa </p>
-
-              <div class="product__price">
-
-                <h6> Rp 7.000.000 </h6>
-
-                <del> Rp 14.000.000 </del>
-
-              </div>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="products__product">
-
-            <img src="img/product4.png">
-
-            <div class="product__marker">
-
-              <p> New </p>
-
-            </div>
-
-            <div class="product__caption">
-
-              <h5 class="product__caption--name"> Respira </h5>
-
-              <p class="product__caption--name"> Outdoor bar table and stool </p>
-
-              <h6> Rp 500.000 </h6>
-
-            </div>
-
-            <div class="product__hover">
-
-              <div class="product__hover-content">
-
-                <div class="product__hover-content--button">
-
-                  <button> Add to card </button>
-
-                </div>
-
-                <div class="product__hover--img">
-
-                  <div>
-
-                    <img src="img/share.svg">
-
-                    <span> Share </span>
-
-                  </div>
-
-                  <div>
-
-                    <a href="product-comparison.html">
-
-                      <img src="img/compare.svg">
-
-                      <span> Compare </span>
-
-                    </a>
-
-                  </div>
-
-                  <div>
-
-                    <img src="img/heart1.svg">
-
-                    <span> Like </span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="product-box__indicating">
-
-          <span> 1 </span>
-
-          <span> 2 </span>
-
-          <span> 3 </span>
-
-          <button> Next </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- end product box list-->
-
-
-
     <!-- start introduction-->
 
     <div class="w-100 w-100-introduction">
@@ -3034,7 +3034,7 @@
 
   </div>
   <script src="js/header.js" type="module"></script>
-  <script src="js/product-on-page.js"></script>
+  <script src="js/product-on-page.js" type="module"></script>
   <script src="js/script.js"></script>
   <script src="js/shop.js" type="module"></script>
 </body>
