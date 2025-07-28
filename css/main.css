@@ -2895,7 +2895,7 @@ input[id=network-list] {
 
 
 
-.product-box__indicating span {
+.product-box__indicating button {
 
     width: 60px;
 
@@ -2914,32 +2914,26 @@ input[id=network-list] {
     margin-right: 40px;
 
     cursor: pointer;
-
-}
-
-
-
-.product-box__indicating span:first-child {
-
-    background-color: #B98E2F;
-
-    color: #fff;
-
-}
-
-
-
-.product-box__indicating button {
-
     border: none;
 
+}
+
+
+
+.product-box__indicating--active {
+
+    background-color: #B98E2F !important;
+
+    color: #fff !important;
+
+}
+
+
+
+.product-box__indicating button:last-child,
+.product-box__indicating button:first-child {
+
     width: 120px;
-
-    background-color: #F9F0E7;
-
-    border-radius: 10px;
-
-    cursor: pointer;
 
     font-size: 16px;
 

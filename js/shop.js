@@ -1330,6 +1330,7 @@ function setEventForMainFilter() {
   });
 };
 setEventForMainFilter();
+// Filter
 
 //Showing part
 var networkShowing = document.getElementById('networkShow');
@@ -1358,3 +1359,60 @@ listShowing.onclick = function () {
   localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
 };
 //Showing part
+
+// Changing page
+var changingPage = document.querySelectorAll('.product-box__indicating > button');
+changingPage.forEach(function (but) {
+  but.onclick = function () {
+    var index = '';
+    function removeActive() {
+      changingPage.forEach(function (numBut, i) {
+        if (numBut.classList.contains('product-box__indicating--active')) {
+          index = i;
+        };
+        numBut.removeAttribute('class');
+        numBut.disabled = false;
+      });
+    };
+
+    function loading() {
+      productsBoxParent.style.display = 'none';
+      loadFiles.style.display = 'block';
+      setTimeout(() => {
+        productsBoxParent.style.display = 'block';
+        loadFiles.style.display = 'none';
+      }, 2000);
+    };
+
+    function notNumberButtonEvent(notNumberButtClass, selectNumberButtClass) {
+      var notNumberButt = document.querySelector(notNumberButtClass);
+      notNumberButt.style.display = 'flex';
+      but.style.display = 'none';
+      var selectNumberButt = document.querySelector(selectNumberButtClass);
+      selectNumberButt.style.display = 'flex';
+    };
+
+    if (but.textContent == ' Next ') {
+      removeActive();
+      notNumberButtonEvent('.product-box__indicating > button:first-child', '.product-box__indicating > button:nth-child(5)');
+      changingPage[index + 1].classList.add('product-box__indicating--active');
+      loading();
+    } else if (but.textContent == ' Previous ') {
+      removeActive();
+      notNumberButtonEvent('.product-box__indicating > button:last-child', '.product-box__indicating > button:nth-child(2)');
+      var lastPage = document.querySelector('.product-box__indicating > button:nth-child(5)');
+      lastPage.style.display = 'none';
+      changingPage[index - 1].classList.add('product-box__indicating--active');
+      loading();
+    } else {
+      removeActive();
+      but.classList.add('product-box__indicating--active');
+      but.disabled = true;
+      loading();
+    };
+    localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
+    localStorage.setItem('whatFilterUse', filterParent.innerHTML);
+    var productParentPositionToScroll = productsBoxParent.getBoundingClientRect();
+    window.scrollTo(productParentPositionToScroll.top, 0);
+  };
+});
