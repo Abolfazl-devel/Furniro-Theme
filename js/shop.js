@@ -181,25 +181,28 @@ function setEventForMainFilter() {
         priceCompareer(ProductsBoxsecoundParentNetwork);
         priceCompareer(ProductsBoxsecoundParentlist);
       } else if (filterItem.textContent == ' Newest ') {
-        var singleProduct = document.querySelectorAll('#secoundProductsParent .products__product');
-        var markers = document.getElementsByClassName('product__marker');
-        var newsetProducts = [];
+        function newestFilter(container,containerId) {
+          var singleProduct = document.querySelectorAll(`#${containerId} .products__product`);
+          var markers = document.getElementsByClassName('product__marker');
+          var newsetProducts = [];
 
-        singleProduct.forEach(function (aProduct) {
-          var hasMarker = Array.from(markers).some(function (marker) {
-            return aProduct.contains(marker);
+          singleProduct.forEach(function (aProduct) {
+            var hasMarker = Array.from(markers).some(function (marker) {
+              return aProduct.contains(marker);
+            });
+
+            if (hasMarker) {
+              newsetProducts.push(aProduct);
+            }
           });
 
-          if (hasMarker) {
-            newsetProducts.push(aProduct);
-          }
-        });
-
-        newsetProducts.forEach(item => {
-          ProductsBoxsecoundParentNetwork.insertBefore(item, ProductsBoxsecoundParentNetwork.firstChild);
-        }); console.log(newsetProducts);
-      }
-      else {
+          newsetProducts.forEach(item => {
+            container.insertBefore(item, container.firstChild);
+          });
+        };
+        newestFilter(ProductsBoxsecoundParentNetwork,'secoundProductsParent');
+        newestFilter(ProductsBoxsecoundParentlist,'secoundProductsParentList');
+      } else {
         function changeInnerHtmlAfterSettingFilter(div) {
           div.innerHTML = `
 
