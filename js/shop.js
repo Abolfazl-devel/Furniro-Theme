@@ -181,7 +181,7 @@ function setEventForMainFilter() {
         priceCompareer(ProductsBoxsecoundParentNetwork);
         priceCompareer(ProductsBoxsecoundParentlist);
       } else if (filterItem.textContent == ' Newest ') {
-        function newestFilter(container,containerId) {
+        function newestFilter(container, containerId) {
           var singleProduct = document.querySelectorAll(`#${containerId} .products__product`);
           var markers = document.getElementsByClassName('product__marker');
           var newsetProducts = [];
@@ -200,8 +200,8 @@ function setEventForMainFilter() {
             container.insertBefore(item, container.firstChild);
           });
         };
-        newestFilter(ProductsBoxsecoundParentNetwork,'secoundProductsParent');
-        newestFilter(ProductsBoxsecoundParentlist,'secoundProductsParentList');
+        newestFilter(ProductsBoxsecoundParentNetwork, 'secoundProductsParent');
+        newestFilter(ProductsBoxsecoundParentlist, 'secoundProductsParentList');
       } else {
         function changeInnerHtmlAfterSettingFilter(div) {
           div.innerHTML = `
@@ -1365,57 +1365,90 @@ listShowing.onclick = function () {
 
 // Changing page
 var changingPage = document.querySelectorAll('.product-box__indicating > button');
-changingPage.forEach(function (but) {
-  but.onclick = function () {
-    var index = '';
-    function removeActive() {
-      changingPage.forEach(function (numBut, i) {
-        if (numBut.classList.contains('product-box__indicating--active')) {
-          index = i;
+function changePageEvent() {
+  changingPage.forEach(function (but) {
+    but.onclick = function () {
+      function removeActive() {
+        changingPage.forEach(function (numBut) {
+          numBut.removeAttribute('class');
+          numBut.disabled = false;
+        });
+      };
+      
+      var index = '';
+      function getActiveButtonIndex() {
+        changingPage.forEach(function (numBut, i) {
+          if (numBut.classList.contains('product-box__indicating--active')) {
+            index = i;
+            console.log(index);
+          };
+        });
+      };
+
+
+      function loading() {
+        productsBoxParent.style.display = 'none';
+        loadFiles.style.display = 'block';
+        setTimeout(() => {
+          productsBoxParent.style.display = 'block';
+          loadFiles.style.display = 'none';
+        }, 2000);
+      };
+
+      var pageChangingParent = document.getElementById('product-box__indicating');
+      function visiableNotNumberButton(activeBut, condition, notNumberButtClass, butTXT, removingBut, insertBeforeDiv) {
+        activeBut.classList.add('product-box__indicating--active');
+        activeBut.disabled = true;
+        if (condition == undefined) {
+          var notNumberButt = document.querySelector(notNumberButtClass);
+          notNumberButt.style.display = 'flex';
+          but.style.display = 'none';
+          var createNewButton = document.createElement('button');
+          createNewButton.textContent = butTXT;
+          pageChangingParent.appendChild(createNewButton);
+          pageChangingParent.insertBefore(createNewButton, insertBeforeDiv);
+          removingBut.remove();
+          changingPage = document.querySelectorAll('.product-box__indicating > button');
+          changePageEvent();
         };
-        numBut.removeAttribute('class');
-        numBut.disabled = false;
-      });
-    };
+      };
+      switch (but.textContent) {
+        case ' Next ':
+          getActiveButtonIndex();
+          removeActive();
+          visiableNotNumberButton(changingPage[index + 1], changingPage[index + 3], '.product-box__indicating > button:first-child', Number(changingPage[changingPage.length - 2].textContent) + 1, changingPage[(changingPage.length - changingPage.length) + 1], but);
+          loading();
+          break;
 
-    function loading() {
-      productsBoxParent.style.display = 'none';
-      loadFiles.style.display = 'block';
-      setTimeout(() => {
-        productsBoxParent.style.display = 'block';
-        loadFiles.style.display = 'none';
-      }, 2000);
-    };
+        case ' Previous ':
+          getActiveButtonIndex();
+          removeActive();
+          visiableNotNumberButton(changingPage[index - 1], changingPage[index - 4], '.product-box__indicating > button:last-child', Number(changingPage[(changingPage.length - changingPage.length) + 2].textContent) - 2, changingPage[changingPage.length - 2], document.querySelector('.product-box__indicating > button:nth-child(2)'));
+          loading();
+          break;
 
-    function notNumberButtonEvent(notNumberButtClass, selectNumberButtClass) {
-      var notNumberButt = document.querySelector(notNumberButtClass);
-      notNumberButt.style.display = 'flex';
-      but.style.display = 'none';
-      var selectNumberButt = document.querySelector(selectNumberButtClass);
-      selectNumberButt.style.display = 'flex';
-    };
+        default:
+          removeActive();
+          but.classList.add('product-box__indicating--active');
+          getActiveButtonIndex();
+          if (changingPage[index + 2] == undefined) {
+            document.querySelector('.product-box__indicating > button:first-child').style.display = 'flex';
+            document.querySelector('.product-box__indicating > button:last-child').style.display = 'none';
+          } else if (changingPage[index - 2] == undefined) {
+            document.querySelector('.product-box__indicating > button:first-child').style.display = 'none';
+            document.querySelector('.product-box__indicating > button:last-child').style.display = 'flex';
+          };
+          but.disabled = true;
+          loading();
+          break;
+      };
 
-    if (but.textContent == ' Next ') {
-      removeActive();
-      notNumberButtonEvent('.product-box__indicating > button:first-child', '.product-box__indicating > button:nth-child(5)');
-      changingPage[index + 1].classList.add('product-box__indicating--active');
-      loading();
-    } else if (but.textContent == ' Previous ') {
-      removeActive();
-      notNumberButtonEvent('.product-box__indicating > button:last-child', '.product-box__indicating > button:nth-child(2)');
-      var lastPage = document.querySelector('.product-box__indicating > button:nth-child(5)');
-      lastPage.style.display = 'none';
-      changingPage[index - 1].classList.add('product-box__indicating--active');
-      loading();
-    } else {
-      removeActive();
-      but.classList.add('product-box__indicating--active');
-      but.disabled = true;
-      loading();
+      localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
+      localStorage.setItem('whatFilterUse', filterParent.innerHTML);
+      var productParentPositionToScroll = productsBoxParent.getBoundingClientRect();
+      window.scrollTo(productParentPositionToScroll.top, 0);
     };
-    localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
-    localStorage.setItem('whatFilterUse', filterParent.innerHTML);
-    var productParentPositionToScroll = productsBoxParent.getBoundingClientRect();
-    window.scrollTo(productParentPositionToScroll.top, 0);
-  };
-});
+  });
+};
+
+changePageEvent();
