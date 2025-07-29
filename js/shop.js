@@ -1,10 +1,5 @@
 'use strict';
 
-
-// Export Search product function
-export { changePageTitle };
-// Export Search product function 
-
 // Import add to cart porduct On page
 import { addingProductOnPage } from "./product-on-page.js";
 // Import add to cart porduct On page

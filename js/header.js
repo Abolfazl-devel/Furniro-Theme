@@ -1,8 +1,5 @@
 'use strict';
 
-// Search search product function
-import { changePageTitle } from "./shop.js";
-
 //import subtotal calculator
 import { subtotalCalculator, calcutionSubtotal, calcutionSubtotalStep2 } from "./subtotal-calculator.js";
 //import subtotal calculator
@@ -122,8 +119,23 @@ searchBox.onsubmit = function (e) {
   e.preventDefault();
   sessionStorage.setItem('clientSearch', searchWithoutSpace);
   if (window.location.href.search('shop.html') !== -1) {
-    changePageTitle();
-    closePopup();
+    var produtsName = document.querySelectorAll('.product__caption--name');
+    var whatSerach = sessionStorage.getItem('clientSearch');
+    var pageTitle = document.getElementsByTagName('title');
+    pageTitle.textContent = `Searching for ${whatSerach}`;
+
+    var titleOnpage = document.getElementById('pageTitle');
+    titleOnpage.textContent = `Searching for ${whatSerach}`;
+
+    var pagePath = document.getElementById('pagePath');
+    pagePath.textContent = whatSerach;
+    produtsName.forEach(function (t) {
+      if (t.textContent.toLocaleLowerCase().search(whatSerach) == -1) {
+        t.parentElement.parentElement.style.display = 'none';
+      } else {
+        t.parentElement.parentElement.style.display = 'block';
+      };
+    }); closePopup();
   } else {
     window.open('shop.html', '_self');
   };
