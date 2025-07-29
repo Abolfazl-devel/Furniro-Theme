@@ -5844,7 +5844,13 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 }
 
+/* start sidebar focus */
+.sidebar__search input[type="search"]:focus {
+    outline: 2px solid #B88D2E;
+    border: none;
+}
 
+/* end sidebar focus */
 
 /* end sidebar */
 
