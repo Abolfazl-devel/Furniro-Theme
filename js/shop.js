@@ -4,6 +4,10 @@
 import { addingProductOnPage } from "./product-on-page.js";
 // Import add to cart porduct On page
 
+// Import change tabs function
+import { changePageEvent } from "./changing-page.js"
+// Import change tabs function
+
 // Open page with search code
 
 function changePageTitle() {
@@ -1358,92 +1362,5 @@ listShowing.onclick = function () {
 };
 //Showing part
 
-// Changing page
-var changingPage = document.querySelectorAll('.product-box__indicating > button');
-function changePageEvent() {
-  changingPage.forEach(function (but) {
-    but.onclick = function () {
-      function removeActive() {
-        changingPage.forEach(function (numBut) {
-          numBut.removeAttribute('class');
-          numBut.disabled = false;
-        });
-      };
-      
-      var index = '';
-      function getActiveButtonIndex() {
-        changingPage.forEach(function (numBut, i) {
-          if (numBut.classList.contains('product-box__indicating--active')) {
-            index = i;
-            console.log(index);
-          };
-        });
-      };
-
-
-      function loading() {
-        productsBoxParent.style.display = 'none';
-        loadFiles.style.display = 'block';
-        setTimeout(() => {
-          productsBoxParent.style.display = 'block';
-          loadFiles.style.display = 'none';
-        }, 2000);
-      };
-
-      var pageChangingParent = document.getElementById('product-box__indicating');
-      function visiableNotNumberButton(activeBut, condition, notNumberButtClass, butTXT, removingBut, insertBeforeDiv) {
-        activeBut.classList.add('product-box__indicating--active');
-        activeBut.disabled = true;
-        if (condition == undefined) {
-          var notNumberButt = document.querySelector(notNumberButtClass);
-          notNumberButt.style.display = 'flex';
-          but.style.display = 'none';
-          var createNewButton = document.createElement('button');
-          createNewButton.textContent = butTXT;
-          pageChangingParent.appendChild(createNewButton);
-          pageChangingParent.insertBefore(createNewButton, insertBeforeDiv);
-          removingBut.remove();
-          changingPage = document.querySelectorAll('.product-box__indicating > button');
-          changePageEvent();
-        };
-      };
-      switch (but.textContent) {
-        case ' Next ':
-          getActiveButtonIndex();
-          removeActive();
-          visiableNotNumberButton(changingPage[index + 1], changingPage[index + 3], '.product-box__indicating > button:first-child', Number(changingPage[changingPage.length - 2].textContent) + 1, changingPage[(changingPage.length - changingPage.length) + 1], but);
-          loading();
-          break;
-
-        case ' Previous ':
-          getActiveButtonIndex();
-          removeActive();
-          visiableNotNumberButton(changingPage[index - 1], changingPage[index - 4], '.product-box__indicating > button:last-child', Number(changingPage[(changingPage.length - changingPage.length) + 2].textContent) - 2, changingPage[changingPage.length - 2], document.querySelector('.product-box__indicating > button:nth-child(2)'));
-          loading();
-          break;
-
-        default:
-          removeActive();
-          but.classList.add('product-box__indicating--active');
-          getActiveButtonIndex();
-          if (changingPage[index + 2] == undefined) {
-            document.querySelector('.product-box__indicating > button:first-child').style.display = 'flex';
-            document.querySelector('.product-box__indicating > button:last-child').style.display = 'none';
-          } else if (changingPage[index - 2] == undefined) {
-            document.querySelector('.product-box__indicating > button:first-child').style.display = 'none';
-            document.querySelector('.product-box__indicating > button:last-child').style.display = 'flex';
-          };
-          but.disabled = true;
-          loading();
-          break;
-      };
-
-      localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
-      localStorage.setItem('whatFilterUse', filterParent.innerHTML);
-      var productParentPositionToScroll = productsBoxParent.getBoundingClientRect();
-      window.scrollTo(productParentPositionToScroll.top, 0);
-    };
-  });
-};
-
-changePageEvent();
+// Changing tabs
+changePageEvent(productsBoxParent, true, filterParent);

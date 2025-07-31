@@ -463,212 +463,231 @@
 
     <div class="w-100">
 
-      <div class="blogs-sidebar mx-width">
 
-        <div class="blogs">
+      <div class="blogs-sidebar mx-width" id="blogs-sidebar">
 
-          <div class="blogs__blog">
 
-            <div class="blogs__blog--img">
-
-              <img src="img/blog-img1.png">
-
-            </div>
-
-            <div class="blogs__blog--icons">
-
-              <div>
-
-                <img src="img/user1.svg">
-
-                <span> Admin </span>
-
-              </div>
-
-              <div>
-
-                <img src="img/calendar.svg">
-
-                <span> 10 February 2024 </span>
-
-              </div>
-
-              <div>
-
-                <img src="img/pin.svg">
-
-                <span> Wood </span>
-
-              </div>
-
-            </div>
-
-            <div class="blogs__blog--title">
-
-              <h6> Going all-in with millennial design </h6>
-
-            </div>
-
-            <div class="blogs__blog--description">
-
-              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex facere voluptatibus odio suscipit neque
-
-                ducimus, cumque deserunt veritatis atque officia, sapiente reiciendis distinctio nostrum amet sit, error
-
-                repellendus tempora ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
-
-                exercitationem a amet asperiores, excepturi eum dolores pariatur nisi quo sunt repudiandae iure corporis
-
-                earum sapiente repellat adipisci debitis impedit reprehenderit? Lorem ipsum dolor, sit amet consectetur
-
-                adipisicing elit. Nostrum, minus labore alias libero debitis distinctio, at voluptate nam tempora
-
-                tenetur est minima dolores, illum possimus laborum a aspernatur repudiandae aliquid!</p>
-
-            </div>
-
-            <a href="#" class="blogs__blog--button">
-
-              <button> Read more </button>
-
-            </a>
-
+        <div>
+          <!-- Loading -->
+          <div style="display: none; justify-content: center;" id="loadingParent">
+            <img src="img/loading.gif" style="width: 50px;height: 50px;display: none;padding-top: 37px;"
+              id="fileLoading">
           </div>
+          <!-- Loading -->
 
-          <div class="blogs__blog">
+          <div class="blogs" id="blogs">
+            <div class="blogs__blog">
 
-            <div class="blogs__blog--img">
+              <div class="blogs__blog--img">
 
-              <img src="img/blog-img2.png">
-
-            </div>
-
-            <div class="blogs__blog--icons">
-
-              <div>
-
-                <img src="img/user1.svg">
-
-                <span> Admin </span>
+                <img src="img/blog-img1.png">
 
               </div>
 
-              <div>
+              <div class="blogs__blog--icons">
 
-                <img src="img/calendar.svg">
+                <div>
 
-                <span> 10 February 2024 </span>
+                  <img src="img/user1.svg">
 
-              </div>
+                  <span> Admin </span>
 
-              <div>
+                </div>
 
-                <img src="img/pin.svg">
+                <div>
 
-                <span> Handmade </span>
+                  <img src="img/calendar.svg">
 
-              </div>
+                  <span> 10 February 2024 </span>
 
-            </div>
+                </div>
 
-            <div class="blogs__blog--title">
+                <div>
 
-              <h6> Exploring new ways of decorating </h6>
+                  <img src="img/pin.svg">
 
-            </div>
+                  <span> Wood </span>
 
-            <div class="blogs__blog--description">
-
-              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex facere voluptatibus odio suscipit neque
-
-                ducimus, cumque deserunt veritatis atque officia, sapiente reiciendis distinctio nostrum amet sit, error
-
-                repellendus tempora ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
-
-                exercitationem a amet asperiores, excepturi eum dolores pariatur nisi quo sunt repudiandae iure corporis
-
-                earum sapiente repellat adipisci debitis impedit reprehenderit? Lorem ipsum dolor, sit amet consectetur
-
-                adipisicing elit. Nostrum, minus labore alias libero debitis distinctio, at voluptate nam tempora
-
-                tenetur est minima dolores, illum possimus laborum a aspernatur repudiandae aliquid!</p>
-
-            </div>
-
-            <a href="#" class="blogs__blog--button">
-
-              <button> Read more </button>
-
-            </a>
-
-          </div>
-
-          <div class="blogs__blog">
-
-            <div class="blogs__blog--img">
-
-              <img src="img/blog-img3.png">
-
-            </div>
-
-            <div class="blogs__blog--icons">
-
-              <div>
-
-                <img src="img/user1.svg">
-
-                <span> Admin </span>
+                </div>
 
               </div>
 
-              <div>
+              <div class="blogs__blog--title">
 
-                <img src="img/calendar.svg">
-
-                <span> 10 February 2024 </span>
+                <h6> Going all-in with millennial design </h6>
 
               </div>
 
-              <div>
+              <div class="blogs__blog--description">
 
-                <img src="img/pin.svg">
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex facere voluptatibus odio suscipit neque
 
-                <span> Wood </span>
+                  ducimus, cumque deserunt veritatis atque officia, sapiente reiciendis distinctio nostrum amet sit,
+                  error
+
+                  repellendus tempora ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+
+                  exercitationem a amet asperiores, excepturi eum dolores pariatur nisi quo sunt repudiandae iure
+                  corporis
+
+                  earum sapiente repellat adipisci debitis impedit reprehenderit? Lorem ipsum dolor, sit amet
+                  consectetur
+
+                  adipisicing elit. Nostrum, minus labore alias libero debitis distinctio, at voluptate nam tempora
+
+                  tenetur est minima dolores, illum possimus laborum a aspernatur repudiandae aliquid!</p>
 
               </div>
 
-            </div>
+              <a href="#" class="blogs__blog--button">
 
-            <div class="blogs__blog--title">
+                <button> Read more </button>
 
-              <h6> Handmade pieces that took time to make </h6>
-
-            </div>
-
-            <div class="blogs__blog--description">
-
-              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex facere voluptatibus odio suscipit neque
-
-                ducimus, cumque deserunt veritatis atque officia, sapiente reiciendis distinctio nostrum amet sit, error
-
-                repellendus tempora ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
-
-                exercitationem a amet asperiores, excepturi eum dolores pariatur nisi quo sunt repudiandae iure corporis
-
-                earum sapiente repellat adipisci debitis impedit reprehenderit? Lorem ipsum dolor, sit amet consectetur
-
-                adipisicing elit. Nostrum, minus labore alias libero debitis distinctio, at voluptate nam tempora
-
-                tenetur est minima dolores, illum possimus laborum a aspernatur repudiandae aliquid!</p>
+              </a>
 
             </div>
 
-            <a href="#" class="blogs__blog--button">
+            <div class="blogs__blog">
 
-              <button> Read more </button>
+              <div class="blogs__blog--img">
 
-            </a>
+                <img src="img/blog-img2.png">
 
+              </div>
+
+              <div class="blogs__blog--icons">
+
+                <div>
+
+                  <img src="img/user1.svg">
+
+                  <span> Admin </span>
+
+                </div>
+
+                <div>
+
+                  <img src="img/calendar.svg">
+
+                  <span> 10 February 2024 </span>
+
+                </div>
+
+                <div>
+
+                  <img src="img/pin.svg">
+
+                  <span> Handmade </span>
+
+                </div>
+
+              </div>
+
+              <div class="blogs__blog--title">
+
+                <h6> Exploring new ways of decorating </h6>
+
+              </div>
+
+              <div class="blogs__blog--description">
+
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex facere voluptatibus odio suscipit neque
+
+                  ducimus, cumque deserunt veritatis atque officia, sapiente reiciendis distinctio nostrum amet sit,
+                  error
+
+                  repellendus tempora ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+
+                  exercitationem a amet asperiores, excepturi eum dolores pariatur nisi quo sunt repudiandae iure
+                  corporis
+
+                  earum sapiente repellat adipisci debitis impedit reprehenderit? Lorem ipsum dolor, sit amet
+                  consectetur
+
+                  adipisicing elit. Nostrum, minus labore alias libero debitis distinctio, at voluptate nam tempora
+
+                  tenetur est minima dolores, illum possimus laborum a aspernatur repudiandae aliquid!</p>
+
+              </div>
+
+              <a href="#" class="blogs__blog--button">
+
+                <button> Read more </button>
+
+              </a>
+
+            </div>
+
+            <div class="blogs__blog">
+
+              <div class="blogs__blog--img">
+
+                <img src="img/blog-img3.png">
+
+              </div>
+
+              <div class="blogs__blog--icons">
+
+                <div>
+
+                  <img src="img/user1.svg">
+
+                  <span> Admin </span>
+
+                </div>
+
+                <div>
+
+                  <img src="img/calendar.svg">
+
+                  <span> 10 February 2024 </span>
+
+                </div>
+
+                <div>
+
+                  <img src="img/pin.svg">
+
+                  <span> Wood </span>
+
+                </div>
+
+              </div>
+
+              <div class="blogs__blog--title">
+
+                <h6> Handmade pieces that took time to make </h6>
+
+              </div>
+
+              <div class="blogs__blog--description">
+
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex facere voluptatibus odio suscipit neque
+
+                  ducimus, cumque deserunt veritatis atque officia, sapiente reiciendis distinctio nostrum amet sit,
+                  error
+
+                  repellendus tempora ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+
+                  exercitationem a amet asperiores, excepturi eum dolores pariatur nisi quo sunt repudiandae iure
+                  corporis
+
+                  earum sapiente repellat adipisci debitis impedit reprehenderit? Lorem ipsum dolor, sit amet
+                  consectetur
+
+                  adipisicing elit. Nostrum, minus labore alias libero debitis distinctio, at voluptate nam tempora
+
+                  tenetur est minima dolores, illum possimus laborum a aspernatur repudiandae aliquid!</p>
+
+              </div>
+
+              <a href="#" class="blogs__blog--button">
+
+                <button> Read more </button>
+
+              </a>
+
+            </div>
           </div>
 
         </div>
@@ -849,25 +868,22 @@
 
 
 
-    <!-- start indicating -->
+    <!-- start indicating-->
+    <div class="product-box__indicating" id="product-box__indicating">
 
-    <div class="w-100">
+      <button style="display: none;"> Previous </button>
 
-      <div class="indicating mx-width">
+      <button class="product-box__indicating--active"> 1 </button>
 
-        <span> 1 </span>
+      <button> 2 </button>
 
-        <span> 2 </span>
+      <button> 3 </button>
 
-        <span> 3 </span>
+      <button> Next </button>
 
-        <button> Next </button>
-
-      </div>
 
     </div>
-
-    <!-- end indicating -->
+    <!-- end indicating-->
 
 
 
@@ -1060,6 +1076,11 @@
   </div>
   <script src="js/header.js" type="module"></script>
   <script src="js/script.js"></script>
+  <script type="module">
+    import { changePageEvent } from "./js/changing-page.js"
+    var blogsParent = document.getElementById('blogs');
+    changePageEvent(blogsParent);
+  </script>
 </body>
 
 

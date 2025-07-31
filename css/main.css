@@ -5946,6 +5946,10 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
     }
 
+    .blogs-sidebar>div {
+        width: 100%;
+    }
+
 
 
     .blogs {
