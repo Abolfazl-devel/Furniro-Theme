@@ -5465,6 +5465,14 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 /* end send email */
 
+/* start send email focus */
+.send-email div input:focus {
+    outline: none;
+    border: 2px solid #B88D2E;
+}
+
+/* end send email focus */
+
 
 
 /* start call us & send email responsive */
@@ -7488,4 +7496,5 @@ input[id=network-list]:checked~.w-100 .product-box-list {
         font-size: 17px;
     }
 }
+
 /* end bill responsive */
