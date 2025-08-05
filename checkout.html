@@ -12,6 +12,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta charset="UTF-8">
+
   <link rel="icon" type="image/x-icon" href="img/logo.svg">
 
 </head>
@@ -465,7 +467,7 @@
 
       <div class="billing-total mx-width" id="billing-total">
 
-        <div class="billing">
+        <form class="billing" id="billing">
 
           <div class="billing__title">
 
@@ -479,7 +481,9 @@
 
               <p> First Name </p>
 
-              <input type="text">
+              <input type="text" id="firstName" name="name">
+
+              <span class="billing-error">ⓘ Enter a real name please.</span>
 
             </div>
 
@@ -487,7 +491,8 @@
 
               <p> Last Name </p>
 
-              <input type="text">
+              <input type="text" id="lastName" name="lastName">
+              <span class="billing-error">ⓘ Enter a real last name please.</span>
 
             </div>
 
@@ -497,7 +502,7 @@
 
             <p> Company Name (optional) </p>
 
-            <input type="text">
+            <input type="text" name="companyName">
 
           </div>
 
@@ -505,51 +510,51 @@
 
             <p> Country/Region </p>
 
-            <label>
+            <div class="selectInput">
 
-              <span> Sri Lanka </span>
+              <span class="selectedItem"> Select a country </span>
 
               <img src="img/down-arrow1.svg">
 
-              <input type="checkbox">
+              <div class="selectBox" style="display: none;">
 
-              <div>
+                <div class="countryItem">
 
-                <div>
-
-                  <p> Sri Lanka </p>
+                  <p> The United States </p>
 
                 </div>
 
-                <div>
+                <div class="countryItem">
 
-                  <p> Sri Lanka </p>
-
-                </div>
-
-                <div>
-
-                  <p> Sri Lanka </p>
+                  <p> The United kingdom </p>
 
                 </div>
 
-                <div>
 
-                  <p> Sri Lanka </p>
+                <div class="countryItem">
+
+                  <p> Canada </p>
+
+                </div>
+
+                <div class="countryItem">
+
+                  <p> France </p>
 
                 </div>
 
               </div>
 
-            </label>
-
+            </div>
+            <span class="billing-error">ⓘ Select a country please.</span>
           </div>
 
           <div>
 
             <p> Street address </p>
 
-            <input type="text">
+            <input type="text" id="streetAddress" name="streetAddress">
+            <span class="billing-error">ⓘ Enter a real address please.</span>
 
           </div>
 
@@ -557,7 +562,8 @@
 
             <p> Town/City </p>
 
-            <input type="text">
+            <input type="text" id="city-town" name="city/town">
+            <span class="billing-error">ⓘ Enter a real town name please.</span>
 
           </div>
 
@@ -565,43 +571,22 @@
 
             <p> Province </p>
 
-            <label>
+            <div class="selectInput">
 
-              <span> Western Province </span>
+              <span class="selectedItem"> Select a province</span>
 
-              <img src="img/down-arrow1.svg">
+              <img src="img/down-arrow1.svg" id="provinceLoading">
 
-              <input type="checkbox">
-
-              <div>
+              <div class="selectBox" style="display: none;">
 
                 <div>
-
-                  <p> Western Province </p>
-
-                </div>
-
-                <div>
-
-                  <p> Western Province </p>
-
-                </div>
-
-                <div>
-
-                  <p> Western Province </p>
-
-                </div>
-
-                <div>
-
-                  <p> Western Province </p>
-
+                  <p>Select a city or town first</p>
                 </div>
 
               </div>
 
-            </label>
+            </div>
+            <span class="billing-error">ⓘ Select a town please.</span>
 
           </div>
 
@@ -609,7 +594,8 @@
 
             <p> ZIP code </p>
 
-            <input type="text">
+            <input type="text" id="ZIP" name="ZIP">
+            <span class="billing-error">ⓘ Enter a real ZIP code please.</span>
 
           </div>
 
@@ -617,7 +603,8 @@
 
             <p> Phone </p>
 
-            <input type="text">
+            <input type="text" id="phoneNumber" name="phoneNumber">
+            <span class="billing-error">ⓘ Enter a real phone number please.</span>
 
           </div>
 
@@ -625,7 +612,8 @@
 
             <p> Email address </p>
 
-            <input type="text">
+            <input type="email" id="billingEmail" name="email">
+            <span class="billing-error">ⓘ Enter a real Email address please.</span>
 
           </div>
 
@@ -635,7 +623,7 @@
 
           </div>
 
-        </div>
+        </form>
 
         <!-- end billing -->
 
@@ -746,7 +734,7 @@
 
             <div class="total__payment--button">
 
-              <button> Place order </button>
+              <button form="billing"> Place order </button>
 
             </div>
 
@@ -767,7 +755,55 @@
 
     <!-- end total -->
 
+    <!-- start bill -->
+    <div class="w-100 bill-parent" style="display: none;" id="bill-parent">
+      <div class="bill mx-width">
+        <div class="bill__status-img">
+          <img src="img/check.svg" alt="">
+        </div>
+        <div class="bill__status">
+          <p>Payment Success!</p>
+        </div>
+        <div class="bill__product-price" id="bill__product-price">
+          <p> Rs.250,000.00 </p>
+        </div>
+        <div class="bill__info">
+          <div>
+            <span>Ref Number</span>
+            <span>000085752257</span>
+          </div>
+          <div>
+            <span>Payment Time</span>
+            <span class="bill__info--date" id="bill__info--date"></span>
+          </div>
+          <div>
+            <span>Payment Method</span>
+            <span>Bank Transfer</span>
+          </div>
+          <div>
+            <span>Sender Name</span>
+            <span> Ameli Syuzi </span>
+          </div>
+        </div>
+        <div class="bill__total">
+          <div>
+            <span>Amount</span>
+            <span id="bill__total--total"> Rs.250,000.00 </span>
+          </div>
+          <div>
+            <span>Admin Fee</span>
+            <span>Rs.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end bill -->
 
+    <!-- start loading -->
+    <div class="w-100 loading" id="loading" style="display: none;">
+      <img src="img/loading.gif" alt="Loading" style="width: 100px;">
+    </div>
+    <!-- end loading -->
 
     <!-- start introduction-->
 

@@ -6957,9 +6957,16 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 }
 
+.billing-error {
+    color: #B88D2E;
+    font-size: 13px;
+    font-weight: 600;
+    display: none;
+}
 
 
-.billing input[type=text] {
+
+.billing input {
 
     height: 60px;
 
@@ -6972,7 +6979,11 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     padding: 0px 30px;
 
     box-sizing: border-box;
+    display: block;
+}
 
+.billing>div:nth-child(2) input {
+    max-width: 230px;
 }
 
 
@@ -6983,9 +6994,22 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 }
 
+.billing>div:nth-child(2) div {
+    display: block;
+    height: fit-content;
+    border: none;
+    color: black;
+    border-radius: 0;
+    width: fit-content;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    cursor: auto;
+}
 
 
-.billing>div label {
+
+.billing>div>div {
 
     display: flex;
 
@@ -7023,7 +7047,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.billing>div label>div {
+.billing>div>div>div {
 
     position: absolute;
 
@@ -7039,15 +7063,16 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
     border-radius: 10px;
 
-    animation: billing-menu 0.3s ease;
+    animation: displayAnimation 0.3s ease;
 
-    display: none;
+    max-height: 235px;
+    overflow-y: scroll;
 
 }
 
 
 
-.billing>div label>div p {
+.billing>div>div>div p {
 
     margin-bottom: 0;
 
@@ -7055,7 +7080,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.billing>div label div div {
+.billing>div>div div div {
 
     padding: 20px 35px;
 
@@ -7079,7 +7104,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.billing>div:last-child input[type=text] {
+.billing>div:last-child input {
 
     font-weight: 600;
 
@@ -7102,36 +7127,9 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 /* end billing checked */
 
 
-
-/* start billing animation */
-
-@keyframes billing-menu {
-
-    0% {
-
-        opacity: 0;
-
-    }
-
-
-
-    100% {
-
-        opacity: 1;
-
-    }
-
-}
-
-
-
-/* end billing animation */
-
-
-
 /* start billing hover */
 
-.billing>div label div div:hover {
+.billing>div>div div div:hover {
 
     background-color: #B98E2F;
 
@@ -7143,9 +7141,27 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 /* end billing hover */
 
+/* start billing focus */
+.billing input:focus {
+    outline: none;
+    border: 1px solid #B98E2F;
+}
+
+/* end billing focus */
+
 /* end billing */
 
+/* start billing page loading */
+.loading {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    align-items: center;
+    background: rgba(11, 11, 11, 0.8);
+    z-index: 3;
+}
 
+/* end billing page loading */
 
 /* start total */
 
@@ -7325,6 +7341,59 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 /* end total */
 
+/* start bill status */
+.bill-parent {
+    background: rgba(11, 11, 11, 0.8);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    align-items: center;
+    z-index: 3;
+}
+
+.bill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background-color: #fff;
+    min-width: 465px;
+    border-radius: 15px;
+    padding: 30px 30px;
+}
+
+.bill__status {
+    color: #898989;
+    font-size: 26px;
+}
+
+.bill__product-price {
+    font-size: 36px;
+    color: #B98E2F;
+    font-weight: 700;
+}
+
+.bill__info,
+.bill__info>div,
+.bill__total,
+.bill__total>div {
+    width: 100%;
+}
+
+.bill__info>div,
+.bill__total>div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 22px;
+}
+
+.bill__info>div>span:first-child,
+.bill__total>div>span:first-child {
+    color: #707070;
+}
+
+/* end bill status */
 
 
 /* start billing & total responsive */
@@ -7345,6 +7414,9 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
     }
 
+    .billing>div:nth-child(2) input {
+        max-width: 100%;
+    }
 
 
     .billing>div:nth-child(2) div {
