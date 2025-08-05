@@ -13,6 +13,10 @@ import { calculatortotal, totalPrice, totalPriceDecimal } from "./header.js";
 import { displayEmptyCard } from "./empty-cart.js";
 //import show the empty cart function
 
+// Import checkname
+import { checkEmailFn, invaildError, checkEmail, checkName, checkFirstName } from "./check-email-name.js";
+// Import checkname
+
 //Getting data of local storage 
 if (localStorage.getItem('productsName') !== null && localStorage.getItem('productsName') !== '[]') {
   var productName = JSON.parse(localStorage.getItem('productsName'));
@@ -66,7 +70,6 @@ if (localStorage.getItem('productsName') !== null && localStorage.getItem('produ
 };
 
 // checking data
-var invaildError = document.querySelectorAll('.billing-error');
 
 var billingForm = document.getElementById('billing');
 async function submitForm(event) {
@@ -76,12 +79,7 @@ async function submitForm(event) {
   invaildError.forEach(function (inError) {
     inError.style.display = 'none';
   });
-  var firstName = document.getElementById('firstName');
-  var checkFirstName = true;
-  if (!/^[A-Za-z]{3,}$/.test(firstName.value)) {
-    invaildError[0].style.display = 'block';
-    checkFirstName = false;
-  };
+  checkName();
 
   var lastName = document.getElementById('lastName');
   var checkLastName = true;
@@ -165,13 +163,7 @@ async function submitForm(event) {
     invaildError[7].style.display = 'block';
     checkPhoneNumber = false;
   };
-
-  var email = document.getElementById('billingEmail');
-  var checkEmail = true;
-  if (!/^[a-zA-Z][a-zA-Z0-9._%+-]*@(gmail\.com|yahoo\.com|outlook\.com|protonmail\.com|zoho\.com|icloud\.com|mail\.com|gmx\.com|aol\.com|yandex\.com|yandex\.ru|tutanota\.com|fastmail\.com|posteo\.de|mailfence\.com|hotmail\.com|ymail\.com)$/.test(email.value)) {
-    invaildError[8].style.display = 'block';
-    checkEmail = false;
-  };
+  checkEmailFn('billingEmail', 8);
   if (!checkSelectCountry) {
     invaildError[2].style.display = 'block';
   };

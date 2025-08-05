@@ -5403,7 +5403,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.send-email div input[type=text] {
+.send-email input {
 
     width: 100%;
 
@@ -5466,7 +5466,8 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 /* end send email */
 
 /* start send email focus */
-.send-email div input:focus {
+.send-email div input:focus,
+.send-email div textarea:focus-visible {
     outline: none;
     border: 2px solid #B88D2E;
 }
@@ -6965,7 +6966,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 }
 
-.billing-error {
+.form-error {
     color: #B88D2E;
     font-size: 13px;
     font-weight: 600;

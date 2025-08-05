@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="img/logo.svg">
 
 </head>
@@ -559,13 +559,14 @@
 
         <!-- start send email -->
 
-        <div class="send-email">
+        <form class="send-email" id="send-email">
 
           <div>
 
             <p> Your name </p>
 
-            <input type="text" placeholder="Abc">
+            <input type="text" placeholder="Abc" name="name" id="name">
+            <span class="form-error">ⓘ Enter a real name please.</span>
 
           </div>
 
@@ -573,7 +574,8 @@
 
             <p> Email address </p>
 
-            <input type="text" placeholder="Abc@gmail.com">
+            <input type="email" placeholder="Abc@gmail.com" name="email" id="send-email__email">
+            <span class="form-error">ⓘ Enter a real Email address please.</span>
 
           </div>
 
@@ -589,8 +591,13 @@
 
             <p> Message </p>
 
-            <textarea rows="3" placeholder="Hi! i'd like to ask about"></textarea>
-
+            <textarea rows="3" placeholder="Hi! i'd like to ask about" id="send-email__description"></textarea>
+            <span class="form-error">ⓘ Write something.</span>
+            <div id="send-email__loading" style="display: none; align-items: center; margin-top: 20px;">
+              <img src="img/loading.gif" alt="Success"
+                style="width: 30px; height: 30px;margin: 0 20px; margin-left: 5px;">
+              <span style="color: #B88D2E;">Waiting... Sending your message</span>
+            </div>
           </div>
 
           <div class="send-email__button">
@@ -599,7 +606,7 @@
 
           </div>
 
-        </div>
+        </form>
 
       </div>
 
@@ -607,7 +614,11 @@
 
     <!-- end send email -->
 
-
+    <!-- start loading -->
+    <div class="w-100 loading" id="loading" style="display: none;">
+      <img src="" alt="Loading" style="width: 150px;">
+    </div>
+    <!-- end loading -->
 
     <!-- start introduction-->
 
@@ -797,6 +808,7 @@
 
   </div>
   <script src="js/header.js" type="module"></script>
+  <script type="module" src="js/content.js"></script>
   <script src="js/script.js"></script>
 </body>
 
