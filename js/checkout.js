@@ -66,7 +66,6 @@ if (localStorage.getItem('productsName') !== null && localStorage.getItem('produ
 };
 
 // checking data
-
 var invaildError = document.querySelectorAll('.billing-error');
 
 var billingForm = document.getElementById('billing');
@@ -197,6 +196,9 @@ async function submitForm(event) {
     const date = [allDate.getDay(), allDate.getMonth(), allDate.getFullYear()].join('-');
     const time = [allDate.getHours(), allDate.getMinutes(), allDate.getSeconds()].join(':');
     billDate.textContent = date + ',' + time;
+
+    var paymentMethodName = document.getElementById('bill__info--payment-methode');
+    paymentMethodName.textContent = selectedMethodes.textContent;
 
     var total = document.getElementById('bill__total--total');
     total.textContent = allProductsPriceOnPage.textContent;
@@ -444,5 +446,22 @@ cityName.addEventListener('input', fetchCityOrTownName);
 window.addEventListener('load', function () {
   if (cityName.value !== '') {
     fetchCityOrTownName()
+  };
+});
+// checking data
+
+//Changing payment method
+var paymentMethods = document.querySelectorAll('.total__payment--n-active button');
+var selectedMethodes = document.getElementById('payment--active');
+paymentMethods.forEach(function (but, index) {
+  but.onclick = function () {
+    var buttonsTxt = document.querySelectorAll('.total__payment--n-active button>span:last-child');
+    selectedMethodes.textContent = buttonsTxt[index].textContent;
+    var methodDescription = document.getElementById('payment--active__description');
+    if (index == 0) {
+      methodDescription.textContent = 'Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped the funds have cleared in our account.'
+    } else {
+      methodDescription.textContent = 'Give cash to the postman when your products arrive.';
+    }
   };
 });

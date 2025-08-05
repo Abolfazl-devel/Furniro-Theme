@@ -7265,17 +7265,25 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.total__payment--n-active div {
+.total__payment--n-active button {
 
     display: flex;
 
     align-items: center;
 
+    background-color: transparent;
+
+    border: none;
+
+    color: #9F9F9F;
+
+    cursor: pointer;
+
 }
 
 
 
-.total__payment--n-active div:first-child {
+.total__payment--n-active button:first-child {
 
     margin-bottom: 20px;
 
@@ -7283,7 +7291,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.total__payment--n-active div span:first-child {
+.total__payment--n-active button span:first-child {
 
     border: 1px solid #9F9F9F;
 
@@ -7296,9 +7304,6 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     border-radius: 50%;
 
     margin-right: 10px;
-
-    cursor: pointer;
-
 }
 
 
