@@ -205,7 +205,9 @@ async function submitForm(event) {
       var noOptionToSelect = document.createElement('p');
       noOptionToSelect.textContent = 'Select a city or town first';
     }, 5000);
-  };
+  }else {
+  billingLoading.style.display = 'none';
+  }
 };
 billingForm.addEventListener('submit', submitForm);
 

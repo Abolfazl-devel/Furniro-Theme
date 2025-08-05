@@ -14,7 +14,7 @@ function checkEmailFn(emailId, index) {
 
 var checkFirstName = true;
 function checkName() {
-  var firstName = document.getElementById('name');
+  var firstName = document.getElementById('firstName');
   if (!/^[A-Za-z]{3,}$/.test(firstName.value)) {
     invaildError[0].style.display = 'block';
     checkFirstName = false;
