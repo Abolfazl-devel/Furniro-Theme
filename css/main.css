@@ -7351,7 +7351,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     background: rgba(11, 11, 11, 0.8);
     position: fixed;
     top: 0;
-    height: 100vh;
+    height: 100%;
     align-items: center;
     z-index: 3;
 }
@@ -7365,6 +7365,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     min-width: 465px;
     border-radius: 15px;
     padding: 30px 30px;
+    box-sizing: border-box;
 }
 
 .bill__status {
@@ -7470,6 +7471,21 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 }
 
-
-
 /* end billing & total responsive */
+
+/* start bill responsive */
+
+@media only screen and (max-width:560px) {
+    .bill {
+        min-width: 100%;
+    }
+}
+
+@media only screen and (max-width:380px) {
+
+    .bill__info>div,
+    .bill__total>div {
+        font-size: 17px;
+    }
+}
+/* end bill responsive */
