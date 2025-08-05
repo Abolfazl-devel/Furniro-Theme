@@ -4387,7 +4387,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.compair-products__show-more button {
+.compair-products__show-more a {
 
     color: #727272;
 
