@@ -1,7 +1,7 @@
 'use strict';
 // Delete product
-var deleteProduct = document.querySelectorAll('.compair-products__product--close');
-function removeProduct() {
+function removeProduct(deleteButton, secoundPartClass) {
+  var deleteProduct = document.querySelectorAll(deleteButton);
   deleteProduct.forEach(function (del, index) {
     del.onclick = function () {
       var comparisonBox = document.querySelectorAll('.products-description > div');
@@ -12,12 +12,13 @@ function removeProduct() {
       mobileComparisonBox.forEach(function (box) {
         box.remove();
       });
-      var product = document.querySelectorAll('.compair-products__product');
-      product[deleteProduct.length].remove();
+      var product = document.querySelectorAll(secoundPartClass);
+      product[index].parentElement.remove();
       del.parentElement.remove();
       deleteProduct = document.querySelectorAll('.compair-products__product--close');
-      removeProduct();
+      removeProduct(deleteButton, secoundPartClass);
     };
   });
 };
-removeProduct();
+removeProduct('.compair-products .compair-products__product--close', '.compair-products-mobile .compair-products__product--close');
+removeProduct('.compair-products-mobile .compair-products__product--close', '.compair-products .compair-products__product--close');
