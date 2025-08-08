@@ -322,10 +322,11 @@ re.com `, ' Warranty Against Manufacturing Defect ', ' The Warranty Does Not Cov
 
         </div>`, ' 1 Three Seater,2 Single Seater ', 'DTUBLIGRBL568', ' Solid Wood ', ' L-shaped ', ' Fabric + Cotton ', ' Bright Gray & Lion ', 'Matte', ' Bright Gray & Lion ', ' yes ', ' 300 KG ', ' India ', ' 265.32 cm ', ' 76 cm ', ' 167.76 cm ', ' 65 KG ', ' 41.52 cm ', ' 5.46 cm ', ' 1.2 Year Manufacturing Warranty', ' For Warranty Claims or Any Product Related Issues Please Email at support@xyz.com ', ' Warranty of the product is limited to manufacturing defect only. ', ' The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Course Of Product Usage. ', ' 3 Months ');
     };
-    function removeAndAddSelection(displayType) { }
-    chooseProductBut.forEach(function (selection) {
-      selection.parentElement.style.display = displayType;
-    });
+    function removeAndAddSelection(displayType) {
+      chooseProductBut.forEach(function (selection) {
+        selection.parentElement.style.display = displayType;
+      });
+    }
 
     if (document.querySelectorAll('.compair-products .compair-products__product').length >= 3) {
       removeAndAddSelection('none');
