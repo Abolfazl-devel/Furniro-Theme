@@ -2,6 +2,7 @@
 
 // Import add to cart porduct On page
 import { addingProductOnPage } from "./product-on-page.js";
+addingProductOnPage('.products__product > img', '.product__caption h5', '.product__caption h6', '.product__hover-content--button button');
 // Import add to cart porduct On page
 
 // Import change tabs function
@@ -128,7 +129,7 @@ function filterNumberEvent() {
         productsBoxParent.style.display = 'block';
         loadFiles.style.display = 'none';
         localStorage.setItem('applyFilterOnProduct', productsBoxParent.innerHTML);
-        addingProductOnPage();
+        addingProductOnPage('.products__product > img', '.product__caption h5', '.product__caption h6', '.product__hover-content--button button');
       }, 2000);
       localStorage.setItem('whatFilterUse', filterParent.innerHTML);
     });
@@ -1319,7 +1320,7 @@ function setEventForMainFilter() {
         };
         changeInnerHtmlAfterSettingFilter(ProductsBoxsecoundParentNetwork);
         changeInnerHtmlAfterSettingFilter(ProductsBoxsecoundParentlist);
-        addingProductOnPage();
+        addingProductOnPage('.products__product > img', '.product__caption h5', '.product__caption h6', '.product__hover-content--button button');
         addOrRemoveProduct();
       };
       localStorage.setItem('whatFilterUse', filterParent.innerHTML);

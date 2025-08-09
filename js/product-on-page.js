@@ -1,6 +1,6 @@
 'use strict';
-function addingProductOnPage() {
-  var addToCart = document.querySelectorAll('.product__hover-content--button button');
+function addingProductOnPage(selectImg, selectName, selectPrice, selectButton) {
+  var addToCart = document.querySelectorAll(selectButton);
   addToCart.forEach(function (but, mainIndex) {
     but.onclick = function () {
       but.disabled = true;
@@ -19,7 +19,7 @@ function addingProductOnPage() {
           var x = document.querySelectorAll(select);
           if (!x.length) return;
 
-          var value = (select === '.products__product > img') ? x[mainIndex].src : x[mainIndex].textContent;
+          var value = (localItemName === 'imgUrl') ? x[mainIndex].src : x[mainIndex].textContent;
           console.log(value);
 
           var index = specialArray.indexOf(value);
@@ -27,7 +27,10 @@ function addingProductOnPage() {
 
           if (localItemName === 'productsName') {
             if (isDuplicate) {
-              productNumber[mainIndex] = (Number(productNumber[mainIndex]) + 1).toString();
+              productNumber[productNumber.length - 1] = (Number(productNumber[productNumber.length - 1]) + 1).toString();
+              console.log(productNumber);
+
+              console.log('hi');
             } else {
               specialArray.push(value);
               productNumber.push('1');
@@ -44,7 +47,7 @@ function addingProductOnPage() {
             return;
           };
 
-          if (select === 'productNumber') {
+          if (localItemName === 'productNumber') {
             specialArray.push('1');
           } else {
             specialArray.push(x[mainIndex].textContent + '.00');
@@ -55,9 +58,9 @@ function addingProductOnPage() {
           };
         };
 
-        addItemToLocalstorageItem('.products__product > img', productImgUrl, 'imgUrl');
-        addItemToLocalstorageItem('.product__caption h5', productName, 'productsName');
-        addItemToLocalstorageItem('.product__price h6', productPrice, 'productPrice');
+        addItemToLocalstorageItem(selectImg, productImgUrl, 'imgUrl');
+        addItemToLocalstorageItem(selectName, productName, 'productsName');
+        addItemToLocalstorageItem(selectPrice, productPrice, 'productPrice');
         addItemToLocalstorageItem('.icon-menu--wishlist__number', productNumber, 'productNumber');
 
         function syncProductNameWithOther(arr, localItemName) {
@@ -83,12 +86,12 @@ function addingProductOnPage() {
             } else {
               localStorage.setItem(localItemName, JSON.stringify(element[mainIndex].textContent.split()));
               console.log(element[mainIndex].textContent);
-            }
+            };
           };
         };
-        setLocalstorageItem('.products__product > img', 'imgUrl');
-        setLocalstorageItem('.product__caption h5', 'productsName');
-        setLocalstorageItem('.product__price h6', 'productPrice');
+        setLocalstorageItem(selectImg, 'imgUrl');
+        setLocalstorageItem(selectName, 'productsName');
+        setLocalstorageItem(selectPrice, 'productPrice');
         setLocalstorageItem('', 'productNumber');
 
       };

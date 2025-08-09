@@ -1,4 +1,8 @@
 'use strict';
+// Import adding product function
+import { addingProductOnPage } from "./product-on-page.js";
+// Import adding product function
+
 // Delete product
 function removeProduct(deleteButton, secoundPartClass) {
   var deleteProduct = document.querySelectorAll(deleteButton);
@@ -338,3 +342,6 @@ re.com `, ' Warranty Against Manufacturing Defect ', ' The Warranty Does Not Cov
     removeProduct('.compair-products-mobile .compair-products__product--close', '.compair-products .compair-products__product--close');
   };
 });
+
+// Add product to cart
+addingProductOnPage('.compair-products__product--img img', '.compair-products__product--name h6', '.compair-products__product--price p', '.products-description div div button');
