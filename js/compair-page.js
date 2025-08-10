@@ -344,4 +344,4 @@ re.com `, ' Warranty Against Manufacturing Defect ', ' The Warranty Does Not Cov
 });
 
 // Add product to cart
-addingProductOnPage('.compair-products__product--img img', '.compair-products__product--name h6', '.compair-products__product--price p', '.products-description div div button');
+addingProductOnPage('.compair-products__product--img img', '.compair-products__product--name h6', '.compair-products__product--price p', '.products-description div div button', true);

@@ -5067,7 +5067,6 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 }
 
 .products-description div div button img {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(15%) saturate(7467%) hue-rotate(185deg) brightness(113%) contrast(94%);
     width: 49px;
 }
 

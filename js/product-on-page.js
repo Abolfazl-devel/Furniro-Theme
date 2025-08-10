@@ -1,12 +1,16 @@
 'use strict';
-function addingProductOnPage(selectImg, selectName, selectPrice, selectButton) {
+function addingProductOnPage(selectImg, selectName, selectPrice, selectButton, checkWhite) {
   var addToCart = document.querySelectorAll(selectButton);
   addToCart.forEach(function (but, mainIndex) {
     but.onclick = function () {
       but.disabled = true;
       but.textContent = '';
       var successAddAnimation = document.createElement('img');
-      successAddAnimation.setAttribute('src', 'img/check.gif');
+      if (!checkWhite) {
+        successAddAnimation.setAttribute('src', 'img/check.gif');
+      } else {
+        successAddAnimation.setAttribute('src', 'img/white-check.gif');
+      };
       successAddAnimation.setAttribute('alt', 'successful');
       but.appendChild(successAddAnimation);
       if (localStorage.getItem('productsName') !== null) {
