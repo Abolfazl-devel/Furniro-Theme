@@ -21,6 +21,7 @@ function removeProduct(deleteButton, secoundPartClass) {
       del.parentElement.remove();
       deleteProduct = document.querySelectorAll('.compair-products__product--close');
       removeProduct(deleteButton, secoundPartClass);
+      manageSelection();
     };
   });
 };
