@@ -6384,7 +6384,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description--size div label {
+.buy__description--size div div {
 
     width: 40px;
 
@@ -6408,14 +6408,9 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 }
 
-
-
-.buy__description--size input[type=checkbox] {
-
-    display: none;
-
+.buy__description--size div div span {
+    transition: all ease 0.3s;
 }
-
 
 
 .buy__description--color {

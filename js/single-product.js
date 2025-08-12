@@ -14,3 +14,18 @@ smallPicsParent.forEach(function (image, index) {
     mainImg.src = smallPics[index].src;
   };
 });
+// Change main picture
+
+// Change product size
+var sizesParent = document.querySelectorAll('.buy__description--size div div');
+sizesParent.forEach(function (singleSize, index) {
+  singleSize.onclick = function () {
+    var sizes = document.querySelectorAll('.buy__description--size div div span');
+    sizesParent.forEach(function (allSize, removeSizeIndex) {
+      allSize.removeAttribute('style');
+      sizes[removeSizeIndex].removeAttribute('style');
+    });
+    singleSize.style.background = '#B98E2F';
+    sizes[index].style.color = '#fff';
+  };
+});
