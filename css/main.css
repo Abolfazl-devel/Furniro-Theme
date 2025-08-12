@@ -6430,7 +6430,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description--color div>label {
+.buy__description--color>div>div {
 
     margin-right: 20px;
 
@@ -6449,16 +6449,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 }
 
 
-
-.buy__description--color input[type=checkbox] {
-
-    display: none;
-
-}
-
-
-
-.buy__description--color label {
+.buy__description--color div>div {
 
     width: 40px;
 
@@ -6478,7 +6469,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description--color div:nth-child(2) label:nth-child(2) {
+.buy__description--color>div:nth-child(2)>div:first-child {
 
     border: 1px solid #826DFA;
 
@@ -6486,7 +6477,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description--color div:nth-child(2) label:nth-child(2) label {
+.buy__description--color>div:nth-child(2)>div:first-child>div {
 
     background-color: #826DFA;
 
@@ -6494,7 +6485,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description--color div:nth-child(2) label:nth-child(4) {
+.buy__description--color>div:nth-child(2)>div:nth-child(2) {
 
     border: 1px solid #000;
 
@@ -6502,7 +6493,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description--color div:nth-child(2) label:nth-child(4) label {
+.buy__description--color>div:nth-child(2)>div:nth-child(2)>div {
 
     background-color: #000;
 
@@ -6510,7 +6501,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description--color div:nth-child(2) label:nth-child(6) {
+.buy__description--color>div:nth-child(2)>div:nth-child(3) {
 
     border: 1px solid #B98E2F;
 
@@ -6518,7 +6509,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description--color div:nth-child(2) label:nth-child(6) label {
+.buy__description--color>div:nth-child(2)>div:nth-child(3)>div {
 
     background-color: #B98E2F;
 

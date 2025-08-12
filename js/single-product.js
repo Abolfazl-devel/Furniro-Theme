@@ -29,3 +29,17 @@ sizesParent.forEach(function (singleSize, index) {
     sizes[index].style.color = '#fff';
   };
 });
+// Change product size
+
+// Change product color
+var colorsParent = document.querySelectorAll('.buy__description--color > div > div');
+colorsParent.forEach(function (but, index) {
+  but.onclick = function () {
+    var colors = document.querySelectorAll('.buy__description--color > div:nth-child(2) > div > div');
+    colors.forEach(function (aColor) {
+      aColor.removeAttribute('style');
+    });
+    colors[index].style.scale = '69%';
+  };
+});
+// Change product color
