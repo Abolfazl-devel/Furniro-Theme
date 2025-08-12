@@ -6216,6 +6216,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     padding: 10px 5px;
 
     border-radius: 10px;
+    cursor: pointer;
 
 }
 
