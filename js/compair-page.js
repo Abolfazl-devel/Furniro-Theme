@@ -3,6 +3,10 @@
 import { addingProductOnPage } from "./product-on-page.js";
 // Import adding product function
 
+// Import selection
+import { workingKey, closeSelections } from "./selection.js";
+// Import selection
+
 // Delete product
 function removeProduct(deleteButton, secoundPartClass) {
   var deleteProduct = document.querySelectorAll(deleteButton);
@@ -41,6 +45,7 @@ chooseProductBut.forEach(function (but) {
         selection.style.display = 'block';
       } else {
         selection.style.display = 'none';
+        closeSelections('.compair-products__add-product--menu p', chooseProductSelection);
       };
     });
   };
@@ -49,6 +54,7 @@ chooseProductBut.forEach(function (but) {
 window.addEventListener('click', function () {
   chooseProductSelection.forEach(function (selection) {
     selection.style.display = 'none';
+    closeSelections('.compair-products__add-product--menu p', chooseProductSelection);
   });
 });
 
@@ -371,3 +377,22 @@ re.com `, ' Warranty Against Manufacturing Defect ', ' The Warranty Does Not Cov
 
 // Add product to cart
 addingProductOnPage('.compair-products__product--img img', '.compair-products__product--name h6', '.compair-products__product--price p', '.products-description div div button', true);
+// Add product to cart
+
+// Select Search and arrow keys
+document.addEventListener('keydown', function (press) {
+  var key = press.key.toLowerCase();
+  Array.from(chooseProductSelection).some(function (box) {
+    if (box.style.display == 'block') {
+      var selectedItem = document.querySelectorAll('.chooseProductBut > span');
+      var desktopOrMobileChooseProductSelectionOption = document.querySelectorAll('.compair-products .compair-products__add-product--menu p');
+      var selectBox = document.querySelectorAll('.compair-products .compair-products__add-product--menu');
+      workingKey(desktopOrMobileChooseProductSelectionOption, 0, press.key, key, press, '2px solid rgb(255, 255, 255)', selectedItem, '.compair-products .compair-products__add-product--menu p', selectBox);
+      desktopOrMobileChooseProductSelectionOption = document.querySelectorAll('.compair-products-mobile .compair-products__add-product--menu p');
+      selectBox = document.querySelectorAll('.compair-products-mobile .compair-products__add-product--menu');
+      workingKey(desktopOrMobileChooseProductSelectionOption, 0, press.key, key, press, '2px solid rgb(255, 255, 255)', selectedItem, '.compair-products .compair-products__add-product--menu p', selectBox);
+      return true;
+    };
+    return false;
+  });
+});

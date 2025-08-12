@@ -17,6 +17,10 @@ import { displayEmptyCard } from "./empty-cart.js";
 import { checkEmailFn, invaildError, checkEmail, checkName, checkFirstName } from "./check-email-name.js";
 // Import checkname
 
+// Import selection file
+import { workingKey, closeSelections } from "./selection.js";
+// Import selection file
+
 //Getting data of local storage 
 if (localStorage.getItem('productsName') !== null && localStorage.getItem('productsName') !== '[]') {
   var productName = JSON.parse(localStorage.getItem('productsName'));
@@ -117,7 +121,6 @@ async function submitForm(event) {
     if (getCity && getCity.length > 0) {
       var getDisplay_name = getCity[0].display_name.split(',');
       var whichPlace = getDisplay_name[0].trim();
-      console.log(whichPlace);
       if (whichPlace?.toLowerCase() == cityName.value.trim().toLowerCase()) {
         checkCity = true;
       } else {
@@ -143,7 +146,6 @@ async function submitForm(event) {
     if (gettingZipCodeJson.length > 0) {
       var getDisplay_name = gettingZipCodeJson[0].display_name.split(',');
       var getZipCode = getDisplay_name[7].trim();
-      console.log(getZipCode !== zipCode.value.trim());
       if (getZipCode !== zipCode.value.trim()) {
         checkZipCode = false;
         invaildError[6].style.display = 'block';
@@ -205,8 +207,8 @@ async function submitForm(event) {
       var noOptionToSelect = document.createElement('p');
       noOptionToSelect.textContent = 'Select a city or town first';
     }, 5000);
-  }else {
-  billingLoading.style.display = 'none';
+  } else {
+    billingLoading.style.display = 'none';
   }
 };
 billingForm.addEventListener('submit', submitForm);
@@ -216,7 +218,7 @@ var selectBox = document.querySelectorAll('.selectBox');
 function selectionEvent(event, index) {
   if (selectBox[index].style.display == 'none') {
     event.stopPropagation();
-    closeSelections();
+    closeSelections('.billing > div > div div div', selectBox);
     selectBox[index].style.display = 'block';
   };
 };
@@ -237,19 +239,8 @@ function addingSelectionEvent() {
 };
 addingSelectionEvent();
 
-function closeSelections() {
-  selectBox.forEach(function (box) {
-    box.style.display = 'none';
-    var allOptionsInPage = document.querySelectorAll('.billing > div > div div div');
-    allOptionsInPage.forEach(function (item) {
-      item.style.removeProperty('border');
-    });
-    isSelect = '';
-  });
-};
-
 window.addEventListener('click', function () {
-  closeSelections();
+  closeSelections('.billing > div > div div div', selectBox);
 });
 
 var selectedItem = document.querySelectorAll('.selectedItem');
@@ -276,85 +267,14 @@ countriesItem.forEach(function (item) {
   };
 });
 
-var isSelect = '';
 document.addEventListener('keydown', function (press) {
   var key = press.key.toLowerCase();
   selectBox.forEach(function (box, index) {
     if (box.style.display == 'block') {
-      function selectItem(option) {
-        Array.from(option).forEach(function (item) {
-          item.style.removeProperty('border');
-        });
-        var matchedItem = Array.from(option).filter(item =>
-          item.textContent.trim().toLowerCase().startsWith(key)
-        );
-        if (matchedItem.length == 0) {
-          return;
-        };
-        var selectNow = matchedItem.findIndex(item =>
-          item.style.border == '2px solid rgb(184, 141, 46)'
-        );
-
-        var nextSelect = (selectNow + 1) % matchedItem.length;
-
-        isSelect = matchedItem[nextSelect];
-        changeBorder(matchedItem, nextSelect);
-      };
-
-      function changeBorder(item, index) {
-        isSelect = item[index];
-        item[index].style.transition = 'none';
-        item[index].style.border = '2px solid #B88D2E';
-        setTimeout(() => {
-          item[index].style.transition = 'all ease 0.3s';
-        }, 100);
-        item[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      };
-
-      function arrowKeys(option) {
-        var optionArray = Array.from(option);
-        var activeItem = optionArray.findIndex(item =>
-          item.style.border === '2px solid rgb(184, 141, 46)'
-        );
-        if (press.key == 'ArrowDown') {
-          press.preventDefault();
-          if (activeItem !== -1) {
-            option[activeItem].style.removeProperty('border');
-            var nextSelect = (activeItem + 1) % option.length;
-            changeBorder(option, nextSelect);
-          } else {
-            changeBorder(option, 0);
-          };
-        } else if (press.key == 'ArrowUp') {
-          press.preventDefault();
-          if (activeItem !== -1) {
-            option[activeItem].style.removeProperty('border');
-            var nextSelect = (activeItem - 1 + option.length) % option.length;
-            changeBorder(option, nextSelect);
-          } else {
-            changeBorder(option, option.length - 1);
-          };
-        };
-      };
-
-      function workingKey(whichItems, selectIndex) {
-        var checkAlphabets = /^[a-z]$/i;
-        if (checkAlphabets.test(press.key)) {
-          selectItem(whichItems);
-        };
-        arrowKeys(whichItems);
-        console.log(isSelect);
-        console.log(press.key);
-        if (press.key == 'Enter' && isSelect !== '') {
-          selectedItem[selectIndex].textContent = isSelect.textContent;
-          closeSelections();
-        };
-      };
-
       if (index == 0) {
-        workingKey(countriesItem, 0);
+        workingKey(countriesItem, 0, press.key, key, press, '2px solid rgb(184, 141, 46)', selectedItem, '.billing > div > div div div', selectBox);
       } else {
-        workingKey(provinceItem, 1);
+        workingKey(provinceItem, 1, press.key, key, press, '2px solid rgb(184, 141, 46)', selectedItem, '.billing > div > div div div', selectBox);
       };
     };
   });
