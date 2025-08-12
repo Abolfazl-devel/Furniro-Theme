@@ -6405,6 +6405,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     transition: all ease 0.3s;
 
     cursor: pointer;
+    user-select: none;
 
 }
 
