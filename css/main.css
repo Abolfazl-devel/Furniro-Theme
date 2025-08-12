@@ -6532,7 +6532,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 .buy__description-button div,
-.buy__description-button a {
+#buy__description-button--compair {
 
     display: flex;
 
@@ -6608,7 +6608,8 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 }
 
-.buy__description-button--add-to-cart img{
+.buy__description-button--add-to-cart img,
+#buy__description-button--compair img {
     width: 50px;
 }
 

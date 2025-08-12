@@ -71,3 +71,20 @@ addNumber.onclick = function () {
 //Add to cart
 addingProductOnPage('.buy__all-img div img', '.buy__description--title p', '.buy__description--price', '.buy__description-button--add-to-cart', false, true, productNumber);
 //Add to cart
+
+// Compair animation
+var CompairBut = document.getElementById('buy__description-button--compair');
+CompairBut.onclick = function () {
+  CompairBut.disabled = true;
+  CompairBut.innerHTML = '<img src="img/check.gif" alt="successful">';
+  console.log(5606);
+
+  setTimeout(() => {
+    CompairBut.innerHTML = ' + Compare ';
+    CompairBut.disabled = false;
+    console.log('2s');
+    
+  }, 3300);
+
+};
+// Compair animation
