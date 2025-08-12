@@ -6572,17 +6572,19 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
 
 
-.buy__description-button div span {
+.buy__description-button div span,
+.buy__description-button div button {
 
     margin-right: 30px;
 
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 
 }
 
 
-
-.buy__description-button div span:last-child {
+.buy__description-button div button:last-child {
 
     margin-right: 0;
 

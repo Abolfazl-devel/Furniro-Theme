@@ -43,3 +43,27 @@ colorsParent.forEach(function (but, index) {
   };
 });
 // Change product color
+
+//Change product number
+var removeProduct = document.getElementById('buy__description-button--remove');
+
+var addNumber = document.getElementById('buy__description-button--add');
+
+var productNumber = document.getElementById('buy__description-button--show');
+
+removeProduct.onclick = function () {
+  if (Number(productNumber.textContent) <= 1) {
+    return;
+  } else {
+    productNumber.textContent = Number(productNumber.textContent) - 1;
+  };
+};
+
+addNumber.onclick = function () {
+  if (Number(productNumber.textContent) >= 8) {
+    return;
+  } else {
+    productNumber.textContent = Number(productNumber.textContent) + 1;
+  };
+};
+//Change product number
