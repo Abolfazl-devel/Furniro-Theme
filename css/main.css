@@ -6600,14 +6600,16 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
     background-color: #fff;
 
-    border: 1px solid #000;
-
     border-radius: 10px;
 
     cursor: pointer;
 
     font-size: 18px;
 
+}
+
+.buy__description-button--add-to-cart img{
+    width: 50px;
 }
 
 

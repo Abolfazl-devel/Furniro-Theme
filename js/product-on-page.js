@@ -1,15 +1,15 @@
 'use strict';
-function addingProductOnPage(selectImg, selectName, selectPrice, selectButton, checkWhite) {
+function addingProductOnPage(selectImg, selectName, selectPrice, selectButton, checkWhite, checkBeNumber, number) {
   var addToCart = document.querySelectorAll(selectButton);
   addToCart.forEach(function (but, mainIndex) {
     but.onclick = function () {
       but.disabled = true;
       but.textContent = '';
       var successAddAnimation = document.createElement('img');
-      if (!checkWhite) {
-        successAddAnimation.setAttribute('src', 'img/check.gif');
-      } else {
+      if (checkWhite) {
         successAddAnimation.setAttribute('src', 'img/white-check.gif');
+      } else {
+        successAddAnimation.setAttribute('src', 'img/check.gif');
       };
       successAddAnimation.setAttribute('alt', 'successful');
       but.appendChild(successAddAnimation);
@@ -31,10 +31,11 @@ function addingProductOnPage(selectImg, selectName, selectPrice, selectButton, c
 
           if (localItemName === 'productsName') {
             if (isDuplicate) {
-              productNumber[productNumber.length - 1] = (Number(productNumber[productNumber.length - 1]) + 1).toString();
-              console.log(productNumber);
-
-              console.log('hi');
+              if (checkBeNumber) {
+                productNumber[productNumber.length - 1] = (Number(productNumber[productNumber.length - 1]) + Number(number.textContent)).toString();
+              } else {
+                productNumber[productNumber.length - 1] = (Number(productNumber[productNumber.length - 1]) + 1).toString();
+              };
             } else {
               specialArray.push(value);
               productNumber.push('1');
@@ -78,7 +79,12 @@ function addingProductOnPage(selectImg, selectName, selectPrice, selectButton, c
       } else {
         function setLocalstorageItem(select, localItemName) {
           if (localItemName == 'productNumber') {
-            localStorage.setItem(localItemName, JSON.stringify(('1').split()));
+            if (checkBeNumber) {
+              localStorage.setItem(localItemName, JSON.stringify((number.textContent).split()));
+
+            } else {
+              localStorage.setItem(localItemName, JSON.stringify(('1').split()));
+            };
           } else {
             var element = document.querySelectorAll(select);
 

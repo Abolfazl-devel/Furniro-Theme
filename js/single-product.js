@@ -67,3 +67,7 @@ addNumber.onclick = function () {
   };
 };
 //Change product number
+
+//Add to cart
+addingProductOnPage('.buy__all-img div img', '.buy__description--title p', '.buy__description--price', '.buy__description-button--add-to-cart', false, true, productNumber);
+//Add to cart
