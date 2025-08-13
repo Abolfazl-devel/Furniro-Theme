@@ -785,29 +785,6 @@
 }
 
 
-
-/* start header checked */
-
-input[id=shop-menu]:checked+.header__shop-menu {
-
-    right: 0;
-
-}
-
-
-
-input[id=mobile-menu]:checked+.header__mobile-menu {
-
-    left: 0;
-
-}
-
-
-
-/* end header checked */
-
-
-
 /* start header hover */
 
 .header__mobile-menu-img:hover {
@@ -2474,23 +2451,6 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
 /* end filter hover */
 
 
-
-/* start filter checked */
-
-.filter__filters label input[type=checkbox]:checked+div {
-
-    display: flex;
-
-}
-
-
-
-/* end filter checked */
-
-/* end filter */
-
-
-
 /* start product box */
 
 input[id=network-list] {
@@ -2988,29 +2948,6 @@ input[id=network-list] {
     justify-content: center;
 
 }
-
-
-
-/* start prodcut box checked */
-
-input[id=network-list]:checked~.w-100 .product-box-network {
-
-    display: none;
-
-}
-
-
-
-input[id=network-list]:checked~.w-100 .product-box-list {
-
-    display: flex;
-
-}
-
-
-
-/* end prodcut box checked */
-
 
 
 /* start prodcut box animation */
@@ -4696,21 +4633,6 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     margin-top: 0;
 
 }
-
-
-
-/* start products checked */
-
-.compair-products__add-product label input[type=checkbox]:checked+.compair-products__add-product--menu {
-
-    display: block;
-
-}
-
-
-
-/* end compair products checked */
-
 
 
 /* start compair products animation */
@@ -6677,29 +6599,6 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 }
 
 
-
-/* start buy checked */
-
-.buy__description--size input[type=checkbox]:checked+label {
-
-    background-color: var(--tj-theme-primary);
-
-    color: var(--tj-white);
-
-}
-
-
-
-.buy__description--color input[type=checkbox]:checked+label label {
-
-    scale: 69%;
-
-}
-
-
-
-/* end buy checked */
-
 /* end buy */
 
 
@@ -7156,20 +7055,6 @@ input[id=network-list]:checked~.w-100 .product-box-list {
     color: var(--tj-gray-4);
 
 }
-
-
-
-/* start billing checked */
-
-.billing>div label input[type=checkbox]:checked+div {
-
-    display: block;
-
-}
-
-
-
-/* end billing checked */
 
 
 /* start billing hover */
