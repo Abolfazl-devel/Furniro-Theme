@@ -1372,7 +1372,7 @@ input[id=mobile-menu]:checked+.header__mobile-menu {
 
     height: 336px;
 
-    background-image: url(../img/baner-shop.svg);
+    background-image: url(../img/baner-shop.webp);
 
     background-repeat: no-repeat;
 
@@ -3344,7 +3344,7 @@ input[id=network-list]:checked~.w-100 .product-box-list {
 
     justify-content: end;
 
-    background-image: url(../img/baner-background.png);
+    background-image: url(../img/baner-background.webp);
 
     background-repeat: no-repeat;
 
