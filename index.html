@@ -1485,7 +1485,12 @@
 
   </div>
   <script src="js/header.js" type="module"></script>
-  <script src="js/product-on-page.js"></script>
+  <script type="module">
+    // Import add to cart porduct On page
+    import { addingProductOnPage } from "./js/product-on-page.js";
+    addingProductOnPage('.products__product > img', '.product__caption h5', '.product__caption h6', '.product__hover-content--button button');
+    // Import add to cart porduct On page
+  </script>
   <script src="js/slider.js"></script>
   <script src="js/script.js"></script>
 </body>
