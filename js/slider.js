@@ -55,10 +55,6 @@ sliderLittleBut.forEach(function (but, index) {
       beforeBut.classList.remove('active');
     });
     but.classList.add('active');
-    console.log(-sliderItemSize * 3);
-
-    console.log(rightTranslateX);
-
     if (rightTranslateX == -sliderItemSize * 3 && index == 0) {
       slider.style.transform = `translateX(${-sliderItemSize * 4}px)`;
       setTimeout(() => {

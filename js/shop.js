@@ -39,7 +39,6 @@ window.addEventListener('load', function () {
 // Filter
 
 function addOrRemoveProduct() {
-  console.log('worked');
   produtsNetwork = document.querySelectorAll('.product-box-network .products__product');
   productList = document.querySelectorAll('.product-box-list .products__product');
 
@@ -59,8 +58,6 @@ function addOrRemoveProduct() {
     };
   } else {
     for (var i = produtsNetwork.length - 1; i >= Number(numberFilter.textContent); i--) {
-      console.log(produtsNetwork[i]);
-
       produtsNetwork[i].remove();
       productList[i].remove();
     };

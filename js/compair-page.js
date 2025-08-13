@@ -15,7 +15,6 @@ function removeProduct(deleteButton, secoundPartClass) {
       var comparisonBox = document.querySelectorAll('.products-description > div');
       comparisonBox[index + 1].remove();
       var mobileComparisonBox = document.querySelectorAll(`.products-description__description div:nth-child(${index + 1})`);
-      console.log(mobileComparisonBox);
 
       mobileComparisonBox.forEach(function (box) {
         box.remove();

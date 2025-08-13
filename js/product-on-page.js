@@ -24,7 +24,6 @@ function addingProductOnPage(selectImg, selectName, selectPrice, selectButton, c
           if (!x.length) return;
 
           var value = (localItemName === 'imgUrl') ? x[mainIndex].src : x[mainIndex].textContent;
-          console.log(value);
 
           var index = specialArray.indexOf(value);
           var isDuplicate = index !== -1;
@@ -90,12 +89,10 @@ function addingProductOnPage(selectImg, selectName, selectPrice, selectButton, c
 
             if (localItemName == 'imgUrl') {
               localStorage.setItem(localItemName, JSON.stringify(element[mainIndex].src.split()));
-              console.log(element[mainIndex].src);
             } else if (localItemName == 'productPrice') {
               localStorage.setItem(localItemName, JSON.stringify((element[mainIndex].textContent + '.00').split()));
             } else {
               localStorage.setItem(localItemName, JSON.stringify(element[mainIndex].textContent.split()));
-              console.log(element[mainIndex].textContent);
             };
           };
         };

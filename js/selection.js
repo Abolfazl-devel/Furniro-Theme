@@ -2,11 +2,7 @@ var isSelect = '';
 
 function changeBorder(item, index, borderType) {
   isSelect = item[index];
-  item[index].style.transition = 'none'
-  console.log(item);
-  console.log(index);
-
-  ;
+  item[index].style.transition = 'none';
   item[index].style.border = borderType;
   setTimeout(() => {
     item[index].style.transition = 'all ease 0.3s';
@@ -26,11 +22,8 @@ function arrowKeys(option, key, but, borderType) {
       var nextSelect = (activeItem + 1) % option.length;
       saveLastSelection = nextSelect;
       changeBorder(option, nextSelect, borderType);
-      console.log('if worked');
-
     } else {
       changeBorder(option, 0, borderType);
-      console.log('else worked');
     };
   } else if (key == 'ArrowUp') {
     but.preventDefault();

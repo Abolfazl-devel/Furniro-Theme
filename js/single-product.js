@@ -77,13 +77,9 @@ var CompairBut = document.getElementById('buy__description-button--compair');
 CompairBut.onclick = function () {
   CompairBut.disabled = true;
   CompairBut.innerHTML = '<img src="img/check.gif" alt="successful">';
-  console.log(5606);
-
   setTimeout(() => {
     CompairBut.innerHTML = ' + Compare ';
-    CompairBut.disabled = false;
-    console.log('2s');
-    
+    CompairBut.disabled = false;    
   }, 3300);
 
 };

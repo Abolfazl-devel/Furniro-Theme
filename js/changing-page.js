@@ -5,7 +5,6 @@ function changePageEvent(con, checkShopPage, filterParent) {
 
   changingPage.forEach(function (but) {
     but.onclick = function () {
-      console.log(con);
       function removeActive() {
         changingPage.forEach(function (numBut) {
           numBut.removeAttribute('class');
@@ -25,7 +24,6 @@ function changePageEvent(con, checkShopPage, filterParent) {
 
       function loading() {
         var loadFiles = document.getElementById('fileLoading');
-        console.log(con);
         con.style.display = 'none';
         if (!checkShopPage) {
           var loadingParent = document.getElementById('loadingParent');
