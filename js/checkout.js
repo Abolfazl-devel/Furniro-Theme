@@ -374,13 +374,5 @@ paymentMethods.forEach(function (but, index) {
 //Closing bill
 const closeBill = document.getElementById('bill__close');
 closeBill.onclick = function () {
-  paymentStatus.style.display = 'none';
-  billingForm.reset();
-  selectInput[0].textContent = 'Select a country';
-  selectInput[1].textContent = 'Select a province';
-  selectBox[1].innerHTML = '';
-  var noOptionToSelectParent = document.createElement('div');
-  selectBox[1].appendChild(noOptionToSelectParent);
-  var noOptionToSelect = document.createElement('p');
-  noOptionToSelect.textContent = 'Select a city or town first';
-}
+  location.reload();
+};
