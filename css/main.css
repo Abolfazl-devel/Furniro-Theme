@@ -7298,6 +7298,15 @@ input[id=network-list] {
     box-sizing: border-box;
 }
 
+.bill__close {
+    width: 100%;
+    display: flex;
+}
+
+.bill__close img {
+    cursor: pointer;
+}
+
 .bill__status {
     color: #898989;
     font-size: 26px;

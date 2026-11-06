@@ -76,6 +76,7 @@ if (localStorage.getItem('productsName') !== null && localStorage.getItem('produ
 // checking data
 
 var billingForm = document.getElementById('billing');
+var paymentStatus = document.getElementById('bill-parent');
 async function submitForm(event) {
   var billingLoading = document.getElementById('loading');
   billingLoading.style.display = 'flex';
@@ -180,7 +181,6 @@ async function submitForm(event) {
     allProductsPrice.textContent = allProductsPriceOnPage.textContent;
     var billingLoadingImg = document.querySelector('#loading > img');
     billingLoadingImg.src = 'img/check.gif';
-    var paymentStatus = document.getElementById('bill-parent');
     setTimeout(() => {
       billingLoading.style.display = 'none';
       paymentStatus.style.display = 'flex';
@@ -196,17 +196,7 @@ async function submitForm(event) {
 
     var total = document.getElementById('bill__total--total');
     total.textContent = allProductsPriceOnPage.textContent;
-    setTimeout(() => {
-      paymentStatus.style.display = 'none';
-      billingForm.reset();
-      selectInput[0].textContent = 'Select a country';
-      selectInput[1].textContent = 'Select a province';
-      selectBox[1].innerHTML = '';
-      var noOptionToSelectParent = document.createElement('div');
-      selectBox[1].appendChild(noOptionToSelectParent);
-      var noOptionToSelect = document.createElement('p');
-      noOptionToSelect.textContent = 'Select a city or town first';
-    }, 5000);
+
   } else {
     billingLoading.style.display = 'none';
   }
@@ -379,3 +369,18 @@ paymentMethods.forEach(function (but, index) {
     }
   };
 });
+
+
+//Closing bill
+const closeBill = document.getElementById('bill__close');
+closeBill.onclick = function () {
+  paymentStatus.style.display = 'none';
+  billingForm.reset();
+  selectInput[0].textContent = 'Select a country';
+  selectInput[1].textContent = 'Select a province';
+  selectBox[1].innerHTML = '';
+  var noOptionToSelectParent = document.createElement('div');
+  selectBox[1].appendChild(noOptionToSelectParent);
+  var noOptionToSelect = document.createElement('p');
+  noOptionToSelect.textContent = 'Select a city or town first';
+}
