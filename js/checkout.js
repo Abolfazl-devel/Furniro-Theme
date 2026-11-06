@@ -374,5 +374,8 @@ paymentMethods.forEach(function (but, index) {
 //Closing bill
 const closeBill = document.getElementById('bill__close');
 closeBill.onclick = function () {
+  billingForm.reset();
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0
   location.reload();
-};
+}
