@@ -7282,8 +7282,8 @@ input[id=network-list] {
     position: fixed;
     top: 0;
     height: 100%;
-    align-items: center;
     z-index: 3;
+    overflow: scroll;
 }
 
 .bill {
@@ -7296,6 +7296,8 @@ input[id=network-list] {
     border-radius: 15px;
     padding: 30px 30px;
     box-sizing: border-box;
+    height: fit-content;
+    margin: auto;
 }
 
 .bill__close {

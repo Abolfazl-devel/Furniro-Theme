@@ -78,6 +78,8 @@ if (localStorage.getItem('productsName') !== null && localStorage.getItem('produ
 var billingForm = document.getElementById('billing');
 var paymentStatus = document.getElementById('bill-parent');
 async function submitForm(event) {
+  const page = document.getElementsByTagName('html');
+  page[0].style.overflow = 'hidden';
   var billingLoading = document.getElementById('loading');
   billingLoading.style.display = 'flex';
   event.preventDefault();
@@ -199,6 +201,7 @@ async function submitForm(event) {
 
   } else {
     billingLoading.style.display = 'none';
+    page[0].removeAttribute('style');
   }
 };
 billingForm.addEventListener('submit', submitForm);
@@ -342,6 +345,7 @@ out body;
     .catch(err => {
       invaildError[4].style.display = 'block';
     });
+
 };
 
 var fetchCityOrTownName = requestTimeouting();
