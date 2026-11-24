@@ -21,23 +21,23 @@ function getItemsOfLocal() {
   };
 
   function changeCartTotalSubtotal() {
-    var cartTotalSubtotal = document.getElementById('total--content__subtotal');
-    var productPriceElement = document.querySelectorAll('.cart-products__product--specifications-contant div:nth-child(4) span');
-    var cartTotalTotal = document.getElementById('total--content__total');
+    const cartTotalSubtotal = document.getElementById('total--content__subtotal');
+    const productPriceElement = document.querySelectorAll('.cart-products__product--specifications-contant div:nth-child(4) span');
+    const cartTotalTotal = document.getElementById('total--content__total');
     calculatortotal(productPriceElement);
     cartTotalSubtotal.textContent = `Rs.${totalPrice}.${totalPriceDecimal}`;
     cartTotalTotal.textContent = `Rs.${totalPrice}.${totalPriceDecimal}`;
   };
 
   function removeItem(index) {
-    var productDetails = document.querySelectorAll('.cart-products__product--specifications');
-    var mobileProductDetails = document.querySelectorAll('.cart-products__product--specifications-mobile');
+    const productDetails = document.querySelectorAll('.cart-products__product--specifications');
+    const mobileProductDetails = document.querySelectorAll('.cart-products__product--specifications-mobile');
     productDetails[index].style.display = 'none';
     mobileProductDetails[index].style.display = 'none';
   };
   
   function setInputEvent(productPrice, ele) {
-    var changeProductNumber = document.querySelectorAll('.cart-products__product--specifications-contant input[type="number"]');
+    const changeProductNumber = document.querySelectorAll('.cart-products__product--specifications-contant input[type="number"]');
     changeProductNumber.forEach(function (input, index) {
       input.oninput = function () {
         if (ele) {
@@ -49,7 +49,7 @@ function getItemsOfLocal() {
           removeItem(index);
           input.value = '';
         };
-        var productsSubtotal = document.querySelectorAll('.cart-products__product--specifications-contant div:nth-child(4) span');
+        const productsSubtotal = document.querySelectorAll('.cart-products__product--specifications-contant div:nth-child(4) span');
         productsSubtotal[index].textContent = `Rs.${calcutionSubtotal}.${calcutionSubtotalStep2}`;
         setLocalhostItemAfterChange();
         changeCartTotalSubtotal();
@@ -70,17 +70,17 @@ function getItemsOfLocal() {
       };
     });
   };
-  var deleteItemBeforeSet = document.querySelectorAll('.product--specifications-contant__delete');
-  var mobileDeleteItemBeforeSet = document.querySelectorAll('.product--specifications-contant__delete-mobile');
+  const deleteItemBeforeSet = document.querySelectorAll('.product--specifications-contant__delete');
+  const mobileDeleteItemBeforeSet = document.querySelectorAll('.product--specifications-contant__delete-mobile');
   setDeleteEvent(deleteItemBeforeSet);
   setDeleteEvent(mobileDeleteItemBeforeSet);
 
   if (localStorage.getItem('productsName') !== null && localStorage.getItem('productsName') !== '[]') {
 
-    var productImgUrl = JSON.parse(localStorage.getItem('imgUrl'));
-    var productName = JSON.parse(localStorage.getItem('productsName'));
-    var productPrice = JSON.parse(localStorage.getItem('productPrice'));
-    var productNumber = JSON.parse(localStorage.getItem('productNumber'));
+    const productImgUrl = JSON.parse(localStorage.getItem('imgUrl'));
+    const productName = JSON.parse(localStorage.getItem('productsName'));
+    const productPrice = JSON.parse(localStorage.getItem('productPrice'));
+    const productNumber = JSON.parse(localStorage.getItem('productNumber'));
 
     function clearOldProducts(old) {
       old.forEach(function (single) {
@@ -88,126 +88,126 @@ function getItemsOfLocal() {
       });
     };
 
-    var products = document.getElementById('cart-products__product');
-    var oldProducts = document.querySelectorAll('.cart-products__product--specifications');
-    var mobileOldProducts = document.querySelectorAll('.cart-products__product--specifications-mobile');
+    const products = document.getElementById('cart-products__product');
+    const oldProducts = document.querySelectorAll('.cart-products__product--specifications');
+    const mobileOldProducts = document.querySelectorAll('.cart-products__product--specifications-mobile');
     clearOldProducts(oldProducts);
     clearOldProducts(mobileOldProducts);
 
 
-    for (var i = 0; i < productName.length; i++) {
-      var productDetail = document.createElement('div');
+    for (let i = 0; i < productName.length; i++) {
+      const productDetail = document.createElement('div');
       productDetail.classList.add('cart-products__product--specifications');
       products.appendChild(productDetail);
 
-      var cartProductImgParent = document.createElement('div');
+      const cartProductImgParent = document.createElement('div');
       cartProductImgParent.classList.add('cart-products__product--specifications--img');
       productDetail.appendChild(cartProductImgParent);
-      var cartProductImg = document.createElement('img');
+      const cartProductImg = document.createElement('img');
       cartProductImg.src = productImgUrl[i];
       cartProductImgParent.appendChild(cartProductImg);
 
-      var cartProductContent = document.createElement('div');
+      const cartProductContent = document.createElement('div');
       cartProductContent.classList.add('cart-products__product--specifications-contant');
       productDetail.appendChild(cartProductContent);
 
-      var productNameParent = document.createElement('div');
+      const productNameParent = document.createElement('div');
       cartProductContent.appendChild(productNameParent);
-      var productNameElement = document.createElement('span');
+      const productNameElement = document.createElement('span');
       productNameElement.textContent = productName[i];
       productNameParent.appendChild(productNameElement);
 
-      var productPriceParent = document.createElement('div');
+      const productPriceParent = document.createElement('div');
       cartProductContent.appendChild(productPriceParent);
-      var newProductPriceElement = document.createElement('span');
+      const newProductPriceElement = document.createElement('span');
       newProductPriceElement.textContent = productPrice[i];
       productPriceParent.appendChild(newProductPriceElement);
 
-      var productNumberParent = document.createElement('div');
+      const productNumberParent = document.createElement('div');
       cartProductContent.appendChild(productNumberParent);
-      var productNumberElement = document.createElement('input');
+      const productNumberElement = document.createElement('input');
       productNumberElement.max = '8';
       productNumberElement.type = 'number';
       productNumberElement.value = productNumber[i];
       productNumberParent.appendChild(productNumberElement);
 
-      var productSubtotalParent = document.createElement('div');
+      const productSubtotalParent = document.createElement('div');
       cartProductContent.appendChild(productSubtotalParent);
-      var productSubtotal = document.createElement('span');
+      const productSubtotal = document.createElement('span');
 
       productSubtotal.textContent = `Rs.${calcutionSubtotal}.${calcutionSubtotalStep2}`;
       productSubtotalParent.appendChild(productSubtotal);
 
-      var deleteItemParent = document.createElement('div');
+      const deleteItemParent = document.createElement('div');
       deleteItemParent.classList.add('product--specifications-contant__delete');
       cartProductContent.appendChild(deleteItemParent);
-      var deleteItem = document.createElement('img')
+      const deleteItem = document.createElement('img')
       deleteItem.src = 'img/bin.svg';
       deleteItemParent.appendChild(deleteItem);
 
-      var mobileProductDetail = document.createElement('div');
+      const mobileProductDetail = document.createElement('div');
       mobileProductDetail.classList.add('cart-products__product--specifications-mobile');
       products.appendChild(mobileProductDetail);
 
-      var mobileCartProductImgParent = document.createElement('div');
+      const mobileCartProductImgParent = document.createElement('div');
       mobileCartProductImgParent.classList.add('cart-products__product--specifications--img');
       mobileProductDetail.appendChild(mobileCartProductImgParent);
-      var mobileCartProductImg = document.createElement('img');
+      const mobileCartProductImg = document.createElement('img');
       mobileCartProductImg.src = productImgUrl[i];
       mobileCartProductImgParent.appendChild(mobileCartProductImg);
 
-      var buttonsAndContentParent = document.createElement('div');
+      const buttonsAndContentParent = document.createElement('div');
       buttonsAndContentParent.classList.add('cart-products__product--specifications-contant-button');
       mobileProductDetail.appendChild(buttonsAndContentParent);
 
-      var mobileCartProductContent = document.createElement('div');
+      const mobileCartProductContent = document.createElement('div');
       mobileCartProductContent.classList.add('cart-products__product--specifications-contant');
       buttonsAndContentParent.appendChild(mobileCartProductContent);
 
-      var mobileProductNameParent = document.createElement('div');
+      const mobileProductNameParent = document.createElement('div');
       mobileCartProductContent.appendChild(mobileProductNameParent);
-      var mobileProductNameElement = document.createElement('span');
+      const mobileProductNameElement = document.createElement('span');
       mobileProductNameElement.textContent = productName[i];
       mobileProductNameParent.appendChild(mobileProductNameElement);
 
-      var mobileProductPriceParent = document.createElement('div');
+      const mobileProductPriceParent = document.createElement('div');
       mobileCartProductContent.appendChild(mobileProductPriceParent);
-      var mobileProductPriceElement = document.createElement('span');
+      const mobileProductPriceElement = document.createElement('span');
       mobileProductPriceElement.textContent = productPrice[i];
       mobileProductPriceParent.appendChild(mobileProductPriceElement);
 
-      var mobileButtonsParent = document.createElement('div');
+      const mobileButtonsParent = document.createElement('div');
       mobileButtonsParent.classList.add('cart-products__product--specifications--button');
       buttonsAndContentParent.appendChild(mobileButtonsParent);
 
-      var mobileProductNumberParent = document.createElement('div');
+      const mobileProductNumberParent = document.createElement('div');
       mobileButtonsParent.appendChild(mobileProductNumberParent);
-      var mobileProductNumberElement = document.createElement('input');
+      const mobileProductNumberElement = document.createElement('input');
       mobileProductNumberElement.type = 'number';
       mobileProductNumberElement.max = '8';
       mobileProductNumberElement.value = productNumber[i];
       mobileProductNumberParent.appendChild(mobileProductNumberElement);
 
-      var mobileProductSubtotalParent = document.createElement('div');
+      const mobileProductSubtotalParent = document.createElement('div');
       mobileButtonsParent.appendChild(mobileProductSubtotalParent);
-      var mobileProductSubtotalElement = document.createElement('span');
+      const mobileProductSubtotalElement = document.createElement('span');
       subtotalCalculator(productNumber[i], productPrice[i]);
       productSubtotal.textContent = `Rs.${calcutionSubtotal}.${calcutionSubtotalStep2}`;
       mobileProductSubtotalElement.textContent = `Rs.${calcutionSubtotal}.${calcutionSubtotalStep2}`;
       mobileProductSubtotalParent.appendChild(mobileProductSubtotalElement);
 
-      var mobileDeleteItemParent = document.createElement('div');
+      const mobileDeleteItemParent = document.createElement('div');
       mobileDeleteItemParent.classList.add('product--specifications-contant__delete-mobile');
       mobileButtonsParent.appendChild(mobileDeleteItemParent);
-      var mobileDeleteItem = document.createElement('img');
+      const mobileDeleteItem = document.createElement('img');
       mobileDeleteItem.src = 'img/bin.svg';
       mobileDeleteItemParent.appendChild(mobileDeleteItem);
 
     };
 
-    var deleteItemAfterShow = document.querySelectorAll('.product--specifications-contant__delete');
+    const deleteItemAfterShow = document.querySelectorAll('.product--specifications-contant__delete');
     setDeleteEvent(deleteItemAfterShow);
-    var mobileDeleteItemAfterShow = document.querySelectorAll('.product--specifications-contant__delete-mobile');
+    const mobileDeleteItemAfterShow = document.querySelectorAll('.product--specifications-contant__delete-mobile');
     setDeleteEvent(mobileDeleteItemAfterShow);
 
     setInputEvent(productPrice);
@@ -221,7 +221,7 @@ function getItemsOfLocal() {
 getItemsOfLocal();
 
 window.addEventListener('load', function () {
-  var removeCardItem = document.querySelectorAll('.shop-menu--products__close');
+  const removeCardItem = document.querySelectorAll('.shop-menu--products__close');
   removeCardItem.forEach(function (but) {
     but.addEventListener('click', function () {
       getItemsOfLocal();
