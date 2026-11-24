@@ -1,7 +1,7 @@
 'use strict';
 
 function changePageEvent(con, checkShopPage, filterParent) {
-  var changingPage = document.querySelectorAll('.product-box__indicating > button');
+  let changingPage = document.querySelectorAll('.product-box__indicating > button');
 
   changingPage.forEach(function (but) {
     but.onclick = function () {
@@ -12,7 +12,7 @@ function changePageEvent(con, checkShopPage, filterParent) {
         });
       };
 
-      var index = '';
+      let index = '';
       function getActiveButtonIndex() {
         changingPage.forEach(function (numBut, i) {
           if (numBut.classList.contains('product-box__indicating--active')) {
@@ -23,17 +23,17 @@ function changePageEvent(con, checkShopPage, filterParent) {
 
 
       function loading() {
-        var loadFiles = document.getElementById('fileLoading');
+        const loadFiles = document.getElementById('fileLoading');
         con.style.display = 'none';
         if (!checkShopPage) {
-          var loadingParent = document.getElementById('loadingParent');
+          const loadingParent = document.getElementById('loadingParent');
           loadingParent.style.display = 'flex';
         };
         loadFiles.style.display = 'block';
-        var divceSize = window.innerWidth;
+        const divceSize = window.innerWidth;
         setTimeout(() => {
           if (!checkShopPage) {
-            var loadingParent = document.getElementById('loadingParent');
+            const loadingParent = document.getElementById('loadingParent');
             loadingParent.style.display = 'none';
             if (divceSize <= 1100) {
               con.style.display = 'flex';
@@ -49,13 +49,13 @@ function changePageEvent(con, checkShopPage, filterParent) {
         }, 2000);
       };
 
-      var pageChangingParent = document.getElementById('product-box__indicating');
+      const pageChangingParent = document.getElementById('product-box__indicating');
 
       function showlastOrFirstPage(notNumberButtClass, butTXT, removingBut, insertBeforeDiv, lastOrFirst) {
-        var notNumberButt = document.querySelector(notNumberButtClass);
+        const notNumberButt = document.querySelector(notNumberButtClass);
         notNumberButt.style.display = 'flex';
         lastOrFirst.style.display = 'none';
-        var createNewButton = document.createElement('button');
+        const createNewButton = document.createElement('button');
         createNewButton.textContent = butTXT;
         pageChangingParent.appendChild(createNewButton);
         pageChangingParent.insertBefore(createNewButton, insertBeforeDiv);
@@ -103,7 +103,7 @@ function changePageEvent(con, checkShopPage, filterParent) {
         localStorage.setItem('applyFilterOnProduct', con.innerHTML);
         localStorage.setItem('whatFilterUse', filterParent.innerHTML);
       };
-      var productParentPositionToScroll = con.getBoundingClientRect();
+      const productParentPositionToScroll = con.getBoundingClientRect();
       window.scrollTo(productParentPositionToScroll.top, 0);
     };
   });
